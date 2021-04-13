@@ -10,5 +10,5 @@ CREATE TABLE `stercket` (
     `attack` INT UNSIGNED NOT NULL,
     `defense` INT UNSIGNED NOT NULL,
     `health` INT UNSIGNED NOT NULL,
-    `belonging` VARCHAR(100) NOT NULL
+    `owner` VARCHAR(100) NOT NULL
 );
