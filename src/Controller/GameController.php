@@ -19,10 +19,8 @@ class GameController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    
-     public function game()
+    public function game()
     {
         return $this->twig->render('Game/game.html.twig');
     }
 }
-
