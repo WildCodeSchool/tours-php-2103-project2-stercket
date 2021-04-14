@@ -1,4 +1,10 @@
 --
+-- Drop old `strecket` table to import the new one
+--
+
+DROP Table IF EXISTS stercket;
+
+--
 -- Structure de la table `stercket`
 --
 
