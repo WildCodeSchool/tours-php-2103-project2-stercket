@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+    {% block title %}
+        Stercket Battle
+    {% endblock %}
+
+    {% block link %}
+            <link rel="stylesheet" href="/assets/css/game.css">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+    {% endblock %}
+    {% block content %}
+        {% block nav %}
+            {% block button %}
+                <button class = "button buttonHome"> Home </button>
+                <button class = "button buttonRest"> Rest </button>
+                <button class = "button buttonBattle"> Battle </button>
+            {% endblock %}
+        {% endblock %}
+        {% block collection %}
+                <button class = "buttonCollection"> Collection </button>
+        {% endblock %}
+        {% block stercket %}
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+        {% endblock %}
+    {% endblock %}
+
+

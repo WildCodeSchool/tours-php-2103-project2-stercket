@@ -9,7 +9,7 @@
 
 namespace App\Controller;
 
-class HomeController extends AbstractController
+class GameController extends AbstractController
 {
     /**
      * Display home page
@@ -19,10 +19,10 @@ class HomeController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index()
+    
+     public function game()
     {
-        return $this->twig->render('Home/index.html.twig');
+        return $this->twig->render('Game/game.html.twig');
     }
-
 }
 
