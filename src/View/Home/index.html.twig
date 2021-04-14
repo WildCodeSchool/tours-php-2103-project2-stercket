@@ -11,20 +11,21 @@
     {% endblock %}
 
 
-{% block rules %}
-    <section class = "RulesAndPresentation" >
-     <section class = "Rules">
-        <h1> Rules </h1>
-        <p> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-    </section>
-{% endblock %}
+
 
 {% block content %}
+    {% block rules %}
+        <section class = "RulesAndPresentation" >
+        <section class = "Rules">
+            <h1> Rules </h1>
+            <p> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+        </section>
+    {% endblock %}
         <div class= "blockPresentation">
-            <h2>Welcome In </h2>
+            <h1>Welcome In </h1>
             <h1> STERCKETS BATTLE </h1>
         </div>
-    </section>
+        </section>
 {% endblock %}
 
 {% block button %}
