@@ -1,5 +1,37 @@
 {% extends 'layout.html.twig' %}
 
+    {% block title %}
+        Home
+    {% endblock %}
+
+    {% block link %}
+        <link rel="stylesheet" href="/assets/css/home.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+
+    {% endblock %}
+
 {% block content %}
-    <h1>Hello Wilder !</h1>
+    {% block rules %}
+        <section class = "RulesAndPresentation" >
+        <section class = "Rules">
+            <h1> Rules </h1>
+            <p> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+        </section>
+    {% endblock %}
+        <div class= "blockPresentation">
+            <h1>Welcome In </h1>
+            <h1> STERCKETS BATTLE </h1>
+        </div>
+        </section>
 {% endblock %}
+
+{% block button %}
+    <div class = "blockButton">
+        <button class = "button buttonRules"> Rules </button>
+        <button class= "button buttonPlay" href ="host/"> Play </button>
+    </div>
+{% endblock %}
+
+
+

@@ -8,13 +8,15 @@
     <title>{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
+    {% block link %}{% endblock %}
     <link rel="icon" href="/assets/images/favicon.png">
 </head>
 
 <body>
+
     {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
+    {% block button %}{% endblock %}
+
 </body>
 </html>
 
