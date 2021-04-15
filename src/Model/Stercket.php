@@ -4,14 +4,14 @@ namespace App\Model;
 
 class Stercket
 {
-    private int $id = 0;
-    private string $name = "KoKo";
-    private string $specie = "Grosse Vanne";
-    private string $type = "Connerie";
-    private int $attack = 13;
-    private int $defense = 6;
-    private int $health = 30;
-    private string $owner = "Amanel";
+    private int $id;
+    private string $name;
+    private string $specie;
+    private string $type;
+    private int $attack;
+    private int $defense;
+    private int $health;
+    private string $owner;
 
     //Getters
     public function getId(): int
