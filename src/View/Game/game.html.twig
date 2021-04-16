@@ -5,13 +5,15 @@
     {% endblock %}
 
     {% block link %}
+    {# link for local font #}
             <link rel="stylesheet" href="/assets/css/game.css">
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/assets/fonts/PasseroOne-Regular.ttf">
+            <link rel="icon" href="/assets/images/favicon.png">
     {% endblock %}
     {% block content %}
         {% block nav %}
             {% block button %}
+            {# Next button will involved JS #}
                 <button class = "button buttonHome"> Home </button>
                 <button class = "button buttonRest"> Rest </button>
                 <button class = "button buttonBattle"> Battle </button>
@@ -19,10 +21,5 @@
         {% endblock %}
         {% block collection %}
                 <button class = "buttonCollection"> Collection </button>
-        {% endblock %}
-        {% block stercket %}
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
         {% endblock %}
     {% endblock %}

@@ -1,18 +1,11 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: aurelwcs
- * Date: 08/04/19
- * Time: 18:40
- */
-
 namespace App\Controller;
 
 class GameController extends AbstractController
 {
     /**
-     * Display home page
+     * Display game page
      *
      * @return string
      * @throws \Twig\Error\LoaderError
