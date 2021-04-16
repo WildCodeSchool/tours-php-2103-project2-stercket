@@ -1,9 +1,19 @@
 /* ========== GENERAL PRESETS =================*/
-* { 
-    font-family: 'Passero One', cursive;
+/* passero-one-regular - latin */
+
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h2,button { 
+    font-family: 'Passero One', cursive;
+}
+
+p {
+    font-family: 'Roboto Condensed', cursive;
 }
 
 body {
