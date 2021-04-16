@@ -10,8 +10,18 @@ class Stercket
     private string $type;
     private int $attack;
     private int $defense;
-    private int $health;
+    private int $health = 30;
     private string $owner;
+
+    public function __construct(string $name, string $specie, string $type, string $owner)
+    {
+        $this->name = $name;
+        $this->specie = $specie;
+        $this->type = $type;
+        $this->owner = $owner;
+        $this->attack = $this->nrand(5, 0.5);
+        $this->defense = $this->nrand(2, 0.5);
+    }
 
     //Getters
     public function getId(): int
@@ -59,17 +69,18 @@ class Stercket
         return $this->health;
     }
     //Setter for health
-    public function setHealth($health): void
+    public function setHealth(int $health): void
     {
         if ($health < 0) {
-            $health = 0;
+            $this->health = 0;
+        } else {
+            $this->health = $health;
         }
-        $this->health = $health;
     }
     //function for a shot
     public function fight(Stercket $opponent): void
     {
-        $damage = rand(1, $this->attack) - $opponent->getDefense();
+        $damage = $this->attack - $opponent->getDefense();
         if ($damage < 0) {
             $damage = 0;
         }
@@ -81,15 +92,23 @@ class Stercket
         return $this->getHealth() > 0;
     }
     //function for entire combat
-    public function combat(Stercket $userStercket, Stercket $forestStercket): array
+    public function combat(Stercket $forestStercket): array
     {
         $logs = [];
-        while ($userStercket->isAlive() && $forestStercket->isAlive()) {
-            $userStercket->fight($forestStercket);
-            $forestStercket->fight($userStercket);
-            $logs[] = "Stercket 1 have now " . $userStercket->getHealth() . " health points";
-            $logs[] = "Stercket 2 have now " . $forestStercket->getHealth() . " health points";
+        while ($this->isAlive() && $forestStercket->isAlive()) {
+            $this->fight($forestStercket);
+            $forestStercket->fight($this);
+            $logs[] = "Your stercket have now " . $this->getHealth() . " health points";
+            $logs[] = "Enemie's stercket have now " . $forestStercket->getHealth() . " health points";
         }
         return $logs;
+    }
+
+    private function nrand($mean, $sd): int
+    {
+        $x = mt_rand() / mt_getrandmax();
+        $y = mt_rand() / mt_getrandmax();
+        $number = sqrt(-2 * log($x)) * cos(2 * pi() * $y) * $sd + $mean;
+        return intval($number);
     }
 }
