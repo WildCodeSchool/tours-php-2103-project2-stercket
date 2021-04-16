@@ -5,7 +5,7 @@ namespace App\Controller;
 class GameController extends AbstractController
 {
     /**
-     * Display home page
+     * Display game page
      *
      * @return string
      * @throws \Twig\Error\LoaderError
