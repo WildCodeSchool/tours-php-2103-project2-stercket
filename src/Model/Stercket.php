@@ -104,11 +104,11 @@ class Stercket
         return $logs;
     }
 
-    private function nrand($mean, $sd): int
+    private function nrand($mean, $standardDeviation): int
     {
-        $x = mt_rand() / mt_getrandmax();
-        $y = mt_rand() / mt_getrandmax();
-        $number = sqrt(-2 * log($x)) * cos(2 * pi() * $y) * $sd + $mean;
+        $xValue = mt_rand() / mt_getrandmax();
+        $yValue = mt_rand() / mt_getrandmax();
+        $number = sqrt(-2 * log($xValue)) * cos(2 * pi() * $yValue) * $standardDeviation + $mean;
         return intval($number);
     }
 }
