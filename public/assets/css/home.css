@@ -1,0 +1,38 @@
+/* ========== GENERAL PRESETS =================*/
+* { 
+    font-family: 'Passero One', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 2rem;
+}
+
+
+
+/* ========== MOBILE PORTRAIT PRESETS =================*/
+
+@media screen and (max-width: 640px)  {
+
+    body {
+        font-size: 1.5rem;
+    }
+    .Rules {
+        display: none;
+    }
+
+    .blockButton {
+        border: red solid 1px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button {
+        font-size: 28px;
+        padding: 1rem;
+
+    }
+    
+}
