@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Passero One';
+    src: url('../fonts/passero-one-v14-latin-regular.woff2') format('woff2'), 
+         url('../fonts/passero-one-v14-latin-regular.woff') format('woff'), 
+         url('../fonts/passero-one-v14-latin-regular.ttf') format('truetype');
+  }
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/roboto-condensed-v19-latin-regular.woff2') format('woff2'), 
+         url('../fonts/roboto-condensed-v19-latin-regular.woff') format('woff'), 
+         url('../fonts/roboto-condensed-v19-latin-regular.ttf') format('truetype'); 
+
+  }
+
+
