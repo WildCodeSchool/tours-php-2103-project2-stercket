@@ -9,7 +9,7 @@ class StercketManager extends AbstractManager
      /**
      * Insert new stercket in database
      */
-    public function insert(Stercket $newStercket): int
+    public function insert(Stercket $newStercket): void
     {
         $statement = $this->pdo->prepare("INSERT 
             INTO " . self::TABLE . " (`name`, `specie`, `type`, `attack`, `defense`, `health`, `owner`)
@@ -21,8 +21,11 @@ class StercketManager extends AbstractManager
         $statement->bindValue('defense', $newStercket->getDefense(), \PDO::PARAM_INT);
         $statement->bindValue('health', $newStercket->getHealth(), \PDO::PARAM_INT);
         $statement->bindValue('owner', $newStercket->getOwner(), \PDO::PARAM_STR);
-
         $statement->execute();
-        return (int)$this->pdo->lastInsertId();
+
+        $statement = $this->pdo->prepare("SELECT LAST_INSERT_ID()");
+        $statement->execute();
+        $id = intval($statement->fetch()["LAST_INSERT_ID()"]);
+        $newStercket->setId($id);
     }
 }

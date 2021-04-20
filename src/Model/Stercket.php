@@ -23,10 +23,16 @@ class Stercket
         $this->defense = $this->nrand(2, 0.5);
     }
 
-    //Getters
+    //Getters and setters
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): Stercket
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function getName(): string
