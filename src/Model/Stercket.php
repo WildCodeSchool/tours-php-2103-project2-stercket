@@ -13,7 +13,7 @@ class Stercket
     private int $health = 30;
     private string $owner;
 
-    public function __construct(string $name, string $specie, string $type, string $owner)
+    public function init(string $name, string $specie, string $type, string $owner)
     {
         $this->name = $name;
         $this->specie = $specie;
