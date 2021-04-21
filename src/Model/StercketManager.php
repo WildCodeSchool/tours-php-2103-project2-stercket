@@ -76,15 +76,15 @@ class StercketManager extends AbstractManager
      */
     public function selectAllAsObject(string $orderBy = '', string $direction = 'ASC'): array
     {
-        $collection = [];
+        Stercket::setCollection([]);
         $query = 'SELECT * FROM ' . static::TABLE;
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
         }
         $statement = $this->pdo->query($query);
         while ($stercket = $statement->fetchObject('\App\Model\Stercket')) {
-            $collection[] = $stercket;
+            $stercket->addToCollection();
         }
-        return $collection;
+        return Stercket::getCollection();
     }
 }
