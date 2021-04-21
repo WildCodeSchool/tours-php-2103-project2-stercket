@@ -6,8 +6,8 @@ class StercketManager extends AbstractManager
 {
     public const TABLE = 'stercket';
 
-     /**
-     * Insert new stercket in database
+    /**
+     * Insert a new stercket in database
      */
     public function insert(Stercket $newStercket): void
     {
@@ -27,5 +27,30 @@ class StercketManager extends AbstractManager
         $statement->execute();
         $id = intval($statement->fetch()["LAST_INSERT_ID()"]);
         $newStercket->setId($id);
+    }
+
+    /**
+     * Update all fields except id of a stercket in the database
+     */
+    public function updateAllFields(Stercket $stercket): void
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
+            SET `name`=:name,
+            `specie`=:specie,
+            `type`=:type,
+            `attack`=:attack,
+            `defense`=:defense,
+            `health`=:health,
+            `owner`=:owner
+            WHERE `id`=:id;");
+        $statement->bindValue('name', $stercket->getName(), \PDO::PARAM_STR);
+        $statement->bindValue('specie', $stercket->getSpecie(), \PDO::PARAM_STR);
+        $statement->bindValue('type', $stercket->getType(), \PDO::PARAM_STR);
+        $statement->bindValue('attack', $stercket->getAttack(), \PDO::PARAM_INT);
+        $statement->bindValue('defense', $stercket->getDefense(), \PDO::PARAM_INT);
+        $statement->bindValue('health', $stercket->getHealth(), \PDO::PARAM_INT);
+        $statement->bindValue('owner', $stercket->getOwner(), \PDO::PARAM_STR);
+        $statement->bindValue('id', $stercket->getId(), \PDO::PARAM_INT);
+        $statement->execute();
     }
 }
