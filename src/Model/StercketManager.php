@@ -53,4 +53,22 @@ class StercketManager extends AbstractManager
         $statement->bindValue('id', $stercket->getId(), \PDO::PARAM_INT);
         $statement->execute();
     }
+
+    /**
+     * Update name, health and owner fields of a stercket in the database
+     */
+    public function update(Stercket $stercket): void
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
+            SET `name`=:name,
+            `specie`=:specie,
+            `health`=:health,
+            `owner`=:owner
+            WHERE `id`=:id;");
+        $statement->bindValue('name', $stercket->getName(), \PDO::PARAM_STR);
+        $statement->bindValue('health', $stercket->getHealth(), \PDO::PARAM_INT);
+        $statement->bindValue('owner', $stercket->getOwner(), \PDO::PARAM_STR);
+        $statement->bindValue('id', $stercket->getId(), \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }
