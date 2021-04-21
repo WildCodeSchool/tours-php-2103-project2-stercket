@@ -61,7 +61,6 @@ class StercketManager extends AbstractManager
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
             SET `name`=:name,
-            `specie`=:specie,
             `health`=:health,
             `owner`=:owner
             WHERE `id`=:id;");
