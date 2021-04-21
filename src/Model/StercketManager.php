@@ -70,4 +70,21 @@ class StercketManager extends AbstractManager
         $statement->bindValue('id', $stercket->getId(), \PDO::PARAM_INT);
         $statement->execute();
     }
+
+    /**
+     * Get all row from database as stercket object.
+     */
+    public function selectAllAsObject(string $orderBy = '', string $direction = 'ASC'): array
+    {
+        $collection = [];
+        $query = 'SELECT * FROM ' . static::TABLE;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+        $statement = $this->pdo->query($query);
+        while ($stercket = $statement->fetchObject('\App\Model\Stercket')) {
+            $collection[] = $stercket;
+        }
+        return $collection;
+    }
 }
