@@ -4,6 +4,7 @@ namespace App\Model;
 
 class Stercket
 {
+    private static $collection = [];
     private int $id;
     private string $name;
     private string $specie;
@@ -27,6 +28,16 @@ class Stercket
     }
 
     //Getters and setters
+    public static function getCollection()
+    {
+        return self::$collection;
+    }
+
+    public static function setCollection(array $newCollection)
+    {
+        self::$collection = $newCollection;
+    }
+
     public function getId(): int
     {
         return $this->id;
@@ -84,7 +95,7 @@ class Stercket
     {
         return $this->health;
     }
-    //Setter for health
+
     public function setHealth(int $health): Stercket
     {
         if ($health < 0) {
@@ -94,6 +105,7 @@ class Stercket
         }
         return $this;
     }
+
     //function for a shot
     public function fight(Stercket $opponent): void
     {
@@ -103,11 +115,13 @@ class Stercket
         }
         $opponent->setHealth($opponent->getHealth() - $damage);
     }
+
     //function who verify the health status to check if the sterket is alive or not
     public function isAlive(): bool
     {
         return $this->getHealth() > 0;
     }
+
     //function for entire combat
     public function combat(Stercket $forestStercket): array
     {
@@ -121,11 +135,33 @@ class Stercket
         return $logs;
     }
 
+    //function to generate random normal number
     private function nrand($mean, $standardDeviation): int
     {
         $xValue = mt_rand() / mt_getrandmax();
         $yValue = mt_rand() / mt_getrandmax();
         $number = sqrt(-2 * log($xValue)) * cos(2 * pi() * $yValue) * $standardDeviation + $mean;
         return intval($number);
+    }
+
+    //function that add the stercket in the collection
+    public function addToCollection()
+    {
+        if ($this->id) {
+            if (!self::searchStercketById($this->id)) {
+                self::$collection[] = $this;
+            }
+        }
+    }
+
+    //function that search a stercket in the collection by id
+    public static function searchStercketById(int $id)
+    {
+        foreach (self::$collection as $index => $stercket) {
+            if ($stercket->id === $id) {
+                return $index;
+            }
+        }
+        return false;
     }
 }
