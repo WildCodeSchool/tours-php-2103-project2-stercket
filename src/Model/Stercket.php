@@ -13,7 +13,10 @@ class Stercket
     private int $health = 30;
     private string $owner;
 
-    public function __construct(string $name, string $specie, string $type, string $owner)
+    /*
+     * Initialise the stercket datas with the args and random attack and defense
+     */
+    public function initialisation(string $name, string $specie, string $type, string $owner)
     {
         $this->name = $name;
         $this->specie = $specie;
@@ -23,10 +26,16 @@ class Stercket
         $this->defense = $this->nrand(2, 0.5);
     }
 
-    //Getters
+    //Getters and setters
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): Stercket
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function getName(): string
@@ -34,9 +43,10 @@ class Stercket
         return $this->name;
     }
 
-    public function setName(string $name)
+    public function setName(string $name): Stercket
     {
         $this->name = $name;
+        return $this;
     }
 
     public function getSpecie(): string
@@ -54,6 +64,12 @@ class Stercket
         return $this->owner;
     }
 
+    public function setOwner(string $owner): Stercket
+    {
+        $this->owner = $owner;
+        return $this;
+    }
+
     public function getAttack(): int
     {
         return $this->attack;
@@ -69,13 +85,14 @@ class Stercket
         return $this->health;
     }
     //Setter for health
-    public function setHealth(int $health): void
+    public function setHealth(int $health): Stercket
     {
         if ($health < 0) {
             $this->health = 0;
         } else {
             $this->health = $health;
         }
+        return $this;
     }
     //function for a shot
     public function fight(Stercket $opponent): void
