@@ -1,48 +1,95 @@
 /* ========== GENERAL PRESETS =================*/
-/* passero-one-regular - latin */
-
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('/assets/images/homebackground.jpg');
+    font-size: 2rem;
+}
+
 h2,button { 
     font-family: 'Passero One', cursive;
 }
 
+button{
+    border: none;
+    font-size: 4rem;
+    outline-style: none;
+    padding: 1.6rem 2.4rem;
+    border-radius: 4rem;
+    line-height: 5rem;
+    width: 25rem;
+    letter-spacing: 2px;
+    background-color: #fff;
+    background: linear-gradient(#FF9E57 0%,#FFF 100%);
+    opacity: 85%;
+   
+}
+
+
+
 p {
     font-family: 'Roboto Condensed', cursive;
 }
-
-body {
-    font-size: 2rem;
-}
-
-
-
 /* ========== MOBILE PORTRAIT PRESETS =================*/
 
 @media screen and (max-width: 640px)  {
+    
 
     body {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        background-size: 60em;
+        background-position: 50% 63%;
+        }
+
+
+    .blockPresentation{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 50px;
+        letter-spacing: 1px;
     }
+
+    .welcome{
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
     .Rules {
         display: none;
     }
 
+    /*============= Button part mobile potrait ============*/
+
+
+    button{
+
+        border: none;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        border-radius: 3rem;
+        line-height: 4rem;
+        width: 14rem;
+        letter-spacing: 1px;
+
+    }
+
     .blockButton {
-        border: red solid 1px;
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .button {
         font-size: 28px;
         padding: 1rem;
-
+        margin-top: 50px;
     }
     
 }

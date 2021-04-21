@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="/assets/css/home.css">
     {% endblock %}
 
+
+
 {% block content %}
     {% block rules %}
         <section class = "RulesAndPresentation" >
@@ -16,10 +18,12 @@
             <p> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
         </section>
     {% endblock %}
-        <div class= "blockPresentation">
-            <h2>Welcome In </h2>
-            <h2> STERCKETS BATTLE </h2>
-        </div>
+
+            <div class= "blockPresentation">
+                <h2 class="welcome">Welcome In </h2>
+                <h2> STERCKETS </h2>
+                <h2> BATTLE </h2>
+            </div>
         </section>
 {% endblock %}
 
@@ -29,7 +33,7 @@
 {% block button %}
     <div class = "blockButton">
         <button class = "button buttonRules"> Rules </button>
-        <button class= "button buttonPlay" onclick = "Game/game"> Play </button> 
+        <button class= "button buttonPlay" > Play </button> 
     </div>
 {% endblock %}
 
