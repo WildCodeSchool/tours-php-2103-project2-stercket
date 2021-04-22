@@ -4,6 +4,7 @@ namespace App\Model;
 
 class Stercket
 {
+    public const MAX_WOOD_SIZE = 3;
     public const SPECIES = [
         'mage' => ['firebill', 'frostblob'],
         'knight' =>  ['lightnight', 'darknight'],
