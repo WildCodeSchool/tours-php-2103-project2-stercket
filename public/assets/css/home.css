@@ -6,15 +6,16 @@
 }
 
 body {
-    background-image: url('/assets/images/homebackground.jpg');
+    background: url('/assets/images/homebackground.jpg') center no-repeat;
     font-size: 2rem;
+
 }
 
-h2,button { 
+h2,button,a { 
     font-family: 'Passero One', cursive;
 }
 
-button{
+.button{
     border: none;
     font-size: 4rem;
     outline-style: none;
@@ -23,11 +24,23 @@ button{
     line-height: 5rem;
     width: 25rem;
     letter-spacing: 2px;
+    font-weight: bold;
     background-color: #fff;
     background: linear-gradient(#FF9E57 0%,#FFF 100%);
     opacity: 85%;
    
 }
+
+.buttonPlay{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+
+
+}
+
 
 
 
@@ -40,9 +53,10 @@ p {
     
 
     body {
+        background-size: cover;
         font-size: 2rem;
-        background-size: 60em;
-        background-position: 50% 63%;
+        height: 100vh;
+        background-size: cover;
         }
 
 
@@ -60,6 +74,11 @@ p {
         margin-bottom: 20px;
     }
 
+    .StercketBattle{
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+
     .Rules {
         display: none;
     }
@@ -67,16 +86,23 @@ p {
     /*============= Button part mobile potrait ============*/
 
 
+
     button{
 
         border: none;
-        font-size: 2rem;
+        font-size: 3rem;
         padding: 1rem 2rem;
         border-radius: 3rem;
         line-height: 4rem;
-        width: 14rem;
+        font-weight: 600;
+        font-weight: bold;
         letter-spacing: 1px;
 
+    }
+
+
+    .button{
+        width: 15rem;
     }
 
     .blockButton {
@@ -84,12 +110,108 @@ p {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        
     }
 
     .button {
-        font-size: 28px;
+        font-size: 35px;
         padding: 1rem;
         margin-top: 50px;
     }
     
 }
+
+
+
+/* ========== MOBILE LANDSCAPE PRESETS =================*/
+
+@media screen and (max-width: 850px) and (min-width: 641px)  {
+
+    .Rules {
+        display: none;
+    }
+
+
+
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 5rem;
+        height: 100vh;
+        background-size: cover;
+        
+
+        }
+
+
+    .blockPresentation{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: 1px;
+        margin: 0px 0px 0px 0px;
+        
+    }
+
+    .welcome{
+        font-size: 2rem;
+        margin-bottom: 7px;
+    }
+
+    .StercketBattle{
+        font-size: 4rem;
+        margin-bottom: 20px;
+
+    }
+
+        /*============= Button part mobile landscape ============*/
+
+
+            
+        .blockButton {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: -5rem;
+        }
+
+        button{
+
+            border: none;
+            font-size: 3rem;
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            line-height: 3rem;
+            letter-spacing: 1px;
+    
+        }
+
+        .button{
+            font-size: 40px;
+            padding: 1rem;
+            width: 13rem;
+        }
+
+        .buttonPlay{
+            margin-left: 100px;
+        }
+
+    
+
+
+
+/* ========== LAPTOP PRESETS =================*/
+
+
+}
+        
+
+    
+
+
+
+    
