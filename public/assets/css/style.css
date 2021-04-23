@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Passero One";
+    src: url(/assets/fonts/PasseroOne-Regular.ttf);
+}
+
+.button {
+    font-family: "Passero One", cursive;
+    border: none;
+    font-size: 4rem;
+    outline-style: none;
+    padding: 1rem 1rem;
+    border-radius: 4rem;
+    line-height: 5rem;
+    width: 25rem;
+    letter-spacing: 2px;
+    background-color: #fff;
+    background: linear-gradient(#FF9E57 0%,#FFF 100%);
+    opacity: 85%;
+    cursor:pointer;
+    
+}
