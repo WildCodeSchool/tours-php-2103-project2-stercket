@@ -1,14 +1,13 @@
 {% extends 'layout.html.twig' %}
-{% block stylesheet %}
+{% block link %}
 <link rel="stylesheet" href="/assets/css/battle.css">
 {% endblock %}
 {% block content %}
-    <button class="button-battle" href="#">Battle</button>
     <div class="battle-page">
         <h1>FIGHT!</h1>
         <div class="cross">
-            <p class="line line1"></p>
-            <p class="line line2"></p>
+            <p class="line-page-battle line1-page-battle"></p>
+            <p class="line-page-battle line2-page-battle"></p>
         </div>
         <div class="tables-stercket">
             <table class="table-sterket-User">
@@ -20,23 +19,23 @@
                 <tbody>
                     <tr>
                         <td>Name</td>
-                        <td>{{ nameStercketUser }}</td>
+                        <td>{{ stercketUser.name }}</td>
                     </tr>
                     <tr>
                         <td>Type</td>
-                        <td>{{ typeStercketUser }}</td>
+                        <td>{{ stercketUser.type }}</td>
                     </tr>
                     <tr>
                         <td>Specie</td>
-                        <td>{{ specieStercketUser }}</td>
+                        <td>{{ stercketUser.specie }}</td>
                     </tr>
                     <tr>
                         <td>Attack</td>
-                        <td>{{ attackStercketUser }}</td>
+                        <td>{{ stercketUser.attack }}</td>
                     </tr>
                     <tr>
                         <td>Defense</td>
-                        <td>{{ defenseStercketUser }}</td>
+                        <td>{{ stercketUser.defense }}</td>
                     </tr>
                     <tr>
                         <td>Health</td>
@@ -56,23 +55,23 @@
                 <tbody>
                     <tr>
                         <td>Name</td>
-                        <td>{{ nameSterketEnnemy }}</td>
+                        <td>{{ stercketEnnemy.name }}</td>
                     </tr>
                     <tr>
                         <td>Type</td>
-                        <td>{{ typeStercketEnnemy }}</td>
+                        <td>{{ stercketEnnemy.type }}</td>
                     </tr>
                     <tr>
                         <td>Specie</td>
-                        <td>{{ specieStercketEnnemy }}</td>
+                        <td>{{ stercketEnnemy.specie }}</td>
                     </tr>
                     <tr>
                         <td>Attack</td>
-                        <td>{{ attackStercketEnnemy }}</td>
+                        <td>{{ stercketEnnemy.attack }}</td>
                     </tr>
                     <tr>
                         <td>Defense</td>
-                        <td>{{ defenseStercketEnnemy }}</td>
+                        <td>{{ stercketEnnemy.defense }}</td>
                     </tr>
                     <tr>
                         <td>Health</td>
@@ -94,4 +93,4 @@
         </div>
     </div>
 {% endblock %}
-{% block javascript %}<script src="/assets/js/battle.js" defer></script>{% endblock %}
+{% block script %}<script src="/assets/js/battle.js"></script>{% endblock %}

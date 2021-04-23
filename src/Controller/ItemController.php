@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\Stercket;
 use App\Model\ItemManager;
+use App\Model\StercketManager;
 
 class ItemController extends AbstractController
 {
@@ -91,24 +92,16 @@ class ItemController extends AbstractController
     /**
      * List items
      */
-    public function battle(): string
+    public function battle()
     {
-        $stercketUser = new Stercket('D.va', 'branchia', 'lancier', 'player');
-        $stercketEnnemy = new Stercket('Zigzerg', 'frostblob', 'mage', 'wood');
+        $stercketUser = new Stercket();
+        $stercketEnnemy = new Stercket();
+        $stercketUser->initialise('player');
+        $stercketEnnemy->initialise('wood');
         return $this->twig->render('Item/battle.html.twig', [
             "stercketUser" => $stercketUser,
-            "nameStercketUser" => $stercketUser->getName(),
-            "typeStercketUser" => $stercketUser->getType(),
-            "specieStercketUser" => $stercketUser->getSpecie(),
-            "attackStercketUser" => $stercketUser->getAttack(),
-            "defenseStercketUser" => $stercketUser->getDefense(),
             "healthStercketUser" => $stercketUser->getHealth(),
             "stercketEnnemy" => $stercketEnnemy,
-            "nameSterketEnnemy" => $stercketEnnemy->getName(),
-            "typeStercketEnnemy" => $stercketEnnemy->getType(),
-            "specieStercketEnnemy" => $stercketEnnemy->getSpecie(),
-            "attackStercketEnnemy" => $stercketEnnemy->getAttack(),
-            "defenseStercketEnnemy" => $stercketEnnemy->getDefense(),
             "healthStercketEnnemy" => $stercketEnnemy->getHealth(),
             "combat" => $stercketUser->combat($stercketEnnemy)
         ]);
