@@ -1,7 +1,6 @@
 {% extends 'layout.html.twig' %}
-{% block link %}
+{% block stylesheet %}
 <link rel="stylesheet" href="/assets/css/battle.css">
-<script src="/assets/js/battle.js" defer></script>
 {% endblock %}
 {% block content %}
     <button class="button-battle" href="#">Battle</button>
@@ -95,3 +94,4 @@
         </div>
     </div>
 {% endblock %}
+{% block javascript %}<script src="/assets/js/battle.js" defer></script>{% endblock %}
