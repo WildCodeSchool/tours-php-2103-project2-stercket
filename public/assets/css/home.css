@@ -49,7 +49,7 @@ p {
 }
 /* ========== MOBILE PORTRAIT PRESETS =================*/
 
-@media screen and (max-width: 640px)  {
+@media screen and (max-width: 500px)  {
     
 
     body {
@@ -125,7 +125,7 @@ p {
 
 /* ========== MOBILE LANDSCAPE PRESETS =================*/
 
-@media screen and (max-width: 850px) and (min-width: 641px)  {
+@media screen and (max-width: 850px) and (min-width: 501px)  {
 
     .Rules {
         display: none;
@@ -203,11 +203,64 @@ p {
     
 
 
-
+    }
 /* ========== LAPTOP PRESETS =================*/
+
+@media screen and (min-width: 851px){
+
+    .buttonRules{
+        display: none;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .Rules{
+        border: none;
+        outline-style: none;
+        padding: 1.6rem 2.4rem;
+        border-radius: 4rem;
+        width: 25rem;
+        margin: 50px 0px 0px 0px;
+        width: 50rem;
+        background: linear-gradient(rgb(0, 0, 0) 0%,#FFF 100%);
+        opacity: 85%;
+
+    }
+
+    .rulesTitle{
+        border: none;
+        font-size: 4rem;
+        outline-style: none;
+        padding: 1.6rem 2.4rem;
+        border-radius: 4rem;
+        line-height: 5rem;
+        width: 25rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+        background-color: #fff;
+        background: linear-gradient(#FF9E57 0%,#FFF 100%);
+        opacity: 85%;
+        
+
+    }
+
+    .blockPresentation{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+        
+    
+    }
+
+
 
 
 }
+
         
 
     
