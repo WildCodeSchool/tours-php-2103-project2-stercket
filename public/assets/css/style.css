@@ -1,0 +1,28 @@
+.button {
+    font-family: "Passero One", cursive;
+    border: none;
+    font-size: 4rem;
+    outline-style: none;
+    padding: 1rem 1rem;
+    border-radius: 4rem;
+    line-height: 5rem;
+    width: 25rem;
+    letter-spacing: 2px;
+    background-color: #fff;
+    background: linear-gradient(#FF9E57 0%,#FFF 100%);
+    opacity: 85%;
+    cursor:pointer;   
+}
+
+    font-family: 'Passero One';
+    src: url('../fonts/passero-one-v14-latin-regular.woff2') format('woff2'), 
+         url('../fonts/passero-one-v14-latin-regular.woff') format('woff'), 
+         url('../fonts/passero-one-v14-latin-regular.ttf') format('truetype');
+  }
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/roboto-condensed-v19-latin-regular.woff2') format('woff2'), 
+         url('../fonts/roboto-condensed-v19-latin-regular.woff') format('woff'), 
+         url('../fonts/roboto-condensed-v19-latin-regular.ttf') format('truetype');
+  }

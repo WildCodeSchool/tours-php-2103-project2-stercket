@@ -23,6 +23,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Drop old `item` table to import the new one
+--
+
+DROP Table IF EXISTS item;
+
+--
 -- Structure de la table `item`
 --
 
