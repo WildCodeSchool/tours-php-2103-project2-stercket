@@ -95,7 +95,7 @@ class ItemController extends AbstractController
     {
         $stercketUser = new Stercket('D.va', 'branchia', 'lancier', 'player');
         $stercketEnnemy = new Stercket('Zigzerg', 'frostblob', 'mage', 'wood');
-        return $this->twig->render('Item/test.html.twig', [
+        return $this->twig->render('Item/battle.html.twig', [
             "stercketUser" => $stercketUser,
             "nameStercketUser" => $stercketUser->getName(),
             "typeStercketUser" => $stercketUser->getType(),
