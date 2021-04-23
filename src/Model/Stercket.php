@@ -4,6 +4,16 @@ namespace App\Model;
 
 class Stercket
 {
+    public const MAX_WOOD_SIZE = 3;
+    public const SPECIES = [
+        'mage' => ['firebill', 'frostblob'],
+        'knight' =>  ['lightnight', 'darknight'],
+        'archer' => ['furarchy', 'lazarcha'],
+        'lancer' => ['waterlance', 'branchia'],
+        'horseman' => ['ferida', 'godlir']
+    ];
+    public const TYPES = ['mage', 'knight', 'archer', 'lancer', 'horseman'];
+    public const OWNERS = ['wood', 'player'];
     private int $id;
     private string $name;
     private string $specie;
@@ -16,14 +26,16 @@ class Stercket
     /*
      * Initialise the stercket datas with the args and random attack and defense
      */
-    public function initialisation(string $name, string $specie, string $type, string $owner)
+    public function initialise(string $owner)
     {
-        $this->name = $name;
-        $this->specie = $specie;
-        $this->type = $type;
-        $this->owner = $owner;
-        $this->attack = $this->nrand(5, 0.5);
-        $this->defense = $this->nrand(2, 0.5);
+        if (in_array($owner, self::OWNERS)) {
+            $this->type = self::TYPES[rand(0, 4)];
+            $this->specie = self::SPECIES[$this->type][rand(0, 1)];
+            $this->name = $this->specie;
+            $this->owner = $owner;
+            $this->attack = $this->nrand(5, 0.5);
+            $this->defense = $this->nrand(2, 0.5);
+        }
     }
 
     //Getters and setters
