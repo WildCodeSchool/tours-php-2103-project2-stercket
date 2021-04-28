@@ -5,10 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
 body {
-    background: url('/assets/images/homebackground.jpg') center no-repeat;
-    font-size: 2rem;
-
+    background: url(/assets/images/homebackground.jpg) center no-repeat;
+    font-size: 1.6rem;
+    height: 100vh;
+    background-size: cover;
 }
 
 h2,button,a { 
@@ -41,12 +45,20 @@ h2,button,a {
 
 }
 
+.button:active {
 
+    transform: translate(0, 5px);
+}
 
 
 p {
     font-family: 'Roboto Condensed', cursive;
 }
+
+
+
+
+
 /* ========== MOBILE PORTRAIT PRESETS =================*/
 
 @media screen and (max-width: 500px)  {
@@ -55,8 +67,7 @@ p {
     body {
         background-size: cover;
         font-size: 2rem;
-        height: 100vh;
-        background-size: cover;
+
         }
 
 
@@ -65,7 +76,7 @@ p {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        margin: 50px 50px;
+        margin: 1vh 1vh;
         letter-spacing: 1px;
     }
 
@@ -74,18 +85,15 @@ p {
         margin-bottom: 20px;
     }
 
-    .StercketBattle{
+    .StercketBattle{       
         font-size: 4rem;
         margin-bottom: 20px;
     }
 
-    .Rules {
-        display: none;
-    }
+
+    
 
     /*============= Button part mobile potrait ============*/
-
-
 
     button{
 
@@ -102,7 +110,22 @@ p {
 
 
     .button{
+        border: none;
+        font-size: 2rem;
+        outline-style: none;
+        border-radius: 4rem;
+        line-height: 2rem;
         width: 15rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        background: linear-gradient(#FF9E57 0%,#FFF 100%);
+        opacity: 85%;
+        margin: 1rem;
+        cursor: pointer;
+        font-size: 35px;
+        padding: 1rem;
+        margin-top: 50px;
+      
     }
 
     .blockButton {
@@ -113,11 +136,6 @@ p {
         
     }
 
-    .button {
-        font-size: 35px;
-        padding: 1rem;
-        margin-top: 50px;
-    }
     
 }
 
@@ -129,6 +147,7 @@ p {
 
     .Rules {
         display: none;
+        position: absolute;
     }
 
 
@@ -139,8 +158,8 @@ p {
         flex-direction: column;
         justify-content: center;
         font-size: 5rem;
-        height: 100vh;
-        background-size: cover;
+        height: 100%;
+
         
 
         }
@@ -159,7 +178,9 @@ p {
 
     .welcome{
         font-size: 2rem;
-        margin-bottom: 7px;
+        margin-top: 7vh;
+        margin-bottom: 15px;
+
     }
 
     .StercketBattle{
@@ -176,7 +197,7 @@ p {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            margin-bottom: -5rem;
+            margin-bottom: 1rem;
         }
 
         button{
@@ -191,9 +212,18 @@ p {
         }
 
         .button{
-            font-size: 40px;
-            padding: 1rem;
-            width: 13rem;
+            border: none;
+            font-size: 2rem;
+            outline-style: none;
+            border-radius: 4rem;
+            line-height: 2rem;
+            width: 15rem;
+            letter-spacing: 2px;
+            background-color: #fff;
+            background: linear-gradient(#FF9E57 0%,#FFF 100%);
+            opacity: 85%;
+            margin: 1rem;
+ 
         }
 
         .buttonPlay{
@@ -206,55 +236,118 @@ p {
     }
 /* ========== LAPTOP PRESETS =================*/
 
-@media screen and (min-width: 851px){
+@media screen and (max-height:2500px) and (min-width: 851px){
 
-    .buttonRules{
-        display: none;
-    }
 
     body{
         display: flex;
-        flex-direction: column;
-        
+        justify-content: space-around;  
+       
     }
 
     .Rules{
-        border: none;
-        outline-style: none;
-        padding: 1.6rem 2.4rem;
-        border-radius: 4rem;
-        width: 25rem;
-        margin: 50px 0px 0px 0px;
-        width: 50rem;
-        background: linear-gradient(rgb(0, 0, 0) 0%,#FFF 100%);
-        opacity: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        z-index: 99;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        font-size: 3rem;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
+        clip-path: circle(100px at 50% -30%);
+        -webkit-clip-path: circle(100px at 50% -30%);
+        transition: all 1s ease-out;
 
-    }
+        }
 
-    .rulesTitle{
-        border: none;
-        font-size: 4rem;
-        outline-style: none;
-        padding: 1.6rem 2.4rem;
-        border-radius: 4rem;
-        line-height: 5rem;
-        width: 25rem;
-        letter-spacing: 2px;
-        font-weight: bold;
-        background-color: #fff;
-        background: linear-gradient(#FF9E57 0%,#FFF 100%);
-        opacity: 85%;
-        
+        .Rules.open{
+            clip-path: circle(200% at 50% -15%);
+            -webkit-clip-path: circle(200% at 50% -15%);
+            transition: all 1s ease-out;
+        }
 
-    }
+
+        /* ==== Cross part ====*/
+        .crossHome{
+            height: 4rem;
+            width: 3.5rem;
+            position: absolute;
+            right: 2%;
+            top: 1.5rem;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-around;
+            cursor: pointer;
+        }
+
+        .lineOne{
+            width: 100%;
+            height: 5px;
+            background-color: black;
+            transform: rotateZ(45deg) translate(5px,10px);
+        }
+
+        .lineTwo{
+            width: 100%;
+            height: 5px;
+            background-color: black;
+            transform: rotateZ(-45deg) translate(5px,-9px);
+
+        }
+
+        .Rules h2{
+            margin: 1.5rem;
+        }
+
+        .Rules p {
+
+            margin: 0rem 10rem;
+            letter-spacing: 2px;
+            line-height: 3.8rem;
+        }
 
     .blockPresentation{
         display: flex;
         flex-direction: column;
-        align-content: flex-end;
-        
+        margin-right: 20rem;
+
     
     }
+
+    .welcome{
+        font-size: 10rem;
+        margin-bottom: 20px;
+    }
+
+    .StercketBattle{       
+        font-size: 15rem;
+    }
+
+    
+
+    .button{
+        margin:1rem;
+    }
+
+   .PresentationButton{
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       width: 70rem;
+   }
+
+
+   .blockButton{
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+   }
+
+
+
+
 
 
 

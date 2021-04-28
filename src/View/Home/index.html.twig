@@ -6,34 +6,64 @@
 
     {% block link %}
         <link rel="stylesheet" href="/assets/css/home.css">
+        <script src="/script/Rules.js" defer ></script>
     {% endblock %}
 
 
 
 {% block content %}
-        <section class = "RulesAndPresentation" >
-        <section class = "Rules">
-            <h2> Rules </h2>
-            <p> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-        </section>
 
-            <div class= "blockPresentation">
+            <section class = "Rules">
+                <div class="crossHome">
+                    <div class="lineOne"></div>
+                    <div class="lineTwo"></div>
+                </div>
+                    <h2 class="rulesTitle"> Rules </h2>
+                    <p>Hi everyone!!
+                        Welcome in the Stercket Battle, the place where you can catch all the sterckets around the world.
+                        It's looks like a pokemon game but this is widely better! believe me!
+                        Who is not fed up of these endless fights and this stressful music.
+                        To remedy this there is a solution and this is....the.....
+                                       STERCKET BATTLE !!
+                        So let's begin!</p><br>
+                        
+
+                    <p> If you want to start a new game then click on the New game button.
+                        This lauch a new game and automatically create your first stercket randomly generated.
+                        What a freaking world! You can see there are others wild sterckets who appears at the edge of the forest.</p><br>
+
+                    <p> You can choose one among them by clicking on its image to select it.
+                        After choosing lauch the combat between your stercket and the wild stercket you selected just before by clicking on the battle button.
+                        A new event comes, it's the result of the combat between your stercket and the wild stercket.</p><br>
+
+                    
+                    <p> If your stercket win the combat the wild stercket is now part of your sterkets collection, if not your stercket is now a little weak and you must click on the button Rest to restore its health. Its the same concerning the wild stercket if you won the combat.</p><br>  
+                    <p> From this moment you can choose the stercket of your choice in your collection to combat a wild stercket. </p><br>
+                    <p> If you want resume your last game then click on the Resume button then you'll retrieve your sterckets collection. Funny isn't it?!
+                        So it's time to play!</p>
+
+            </section>
+
+            <div class="PresentationButton">
+            <section class= "blockPresentation">
                 <h2 class="welcome">Welcome In </h2>
                 <h2 class="StercketBattle"> STERCKETS </h2>
                 <h2 class="StercketBattle"> BATTLE </h2>
-            </div>
-        </section>
+            </section>
+        
 {% endblock %}
 
 
 
 
 {% block button %}
-    <div class = "blockButton">
+    <section class = "blockButton">
+        <button class="button buttonRules" id="buttonRules" > Rules </button>
+        <a class="button buttonPlay" href="../Game/play"> Play </a>
+    </section>
+</div>
 
-        <button class="button buttonRules"> Rules </button>
-        <a class="button buttonPlay" href="../Game/game"> Play </a>
-    </div>
+
 {% endblock %}
 
 
