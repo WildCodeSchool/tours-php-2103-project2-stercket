@@ -88,22 +88,4 @@ class ItemController extends AbstractController
             header('Location:/item/index');
         }
     }
-
-    /**
-     * List items
-     */
-    public function battle()
-    {
-        $stercketUser = new Stercket();
-        $stercketEnnemy = new Stercket();
-        $stercketUser->initialise('player');
-        $stercketEnnemy->initialise('wood');
-        return $this->twig->render('Item/battle.html.twig', [
-            "stercketUser" => $stercketUser,
-            "healthStercketUser" => $stercketUser->getHealth(),
-            "stercketEnnemy" => $stercketEnnemy,
-            "healthStercketEnnemy" => $stercketEnnemy->getHealth(),
-            "combat" => $stercketUser->combat($stercketEnnemy)
-        ]);
-    }
 }
