@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\Stercket;
 use App\Model\ItemManager;
-use App\Model\StercketManager;
 
 class ItemController extends AbstractController
 {

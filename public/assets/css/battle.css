@@ -633,12 +633,12 @@ h2.fade {
     }
 
     .table-sterket-User {
-        margin: 0 0 0 2.4rem;
+        margin: 0 1.6rem 0 2.4rem;
         font-size: 1.2rem;
     }
     
     .table-sterket-ennemy {
-        margin: 0 2.4 0 0rem;
+        margin: 0 1.6rem 0 1.6rem;
         font-size: 1.2rem;
     }
 
@@ -685,7 +685,7 @@ h2.fade {
     }
     
     .table-sterket-ennemy {
-        margin: 0 2.4 0 0rem;
+        margin: 0 1.6rem 0 0;
         font-size: 1.2rem;
     }
 
@@ -716,15 +716,42 @@ h2.fade {
     }
 
     .table-sterket-User {
-        margin: 0 -3.6rem 0 2.4rem;
+        margin: 0 0.8rem 0 1.6rem;
         font-size: 1rem;
     }
     
     .table-sterket-ennemy {
-        margin: 0 2.4 0 -3.6rem;
+        margin: 0 1.6rem 0 0.8rem;
         font-size: 1rem;
     }
 
+
+    #combat-infos-table{
+        width: 70%;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    table thead tr {
+        font-size: 1.2rem;
+    }
+    
+    table th, 
+    table td {
+        padding: 0.8rem 0.6rem;
+    }
+
+    .table-sterket-User {
+        margin: 0 0.2rem 0 0.8rem;
+        font-size: 1rem;
+    }
+    
+    .table-sterket-ennemy {
+        margin: 0 0.8rem 0 0.2rem;
+        font-size: 1rem;
+    }
 
     #combat-infos-table{
         width: 70%;

@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+
 {% block link %}
 <link rel="stylesheet" href="/assets/css/battle.css">
 {% endblock %}
@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>Health</td>
-                        <td>{{ healthStercketUser }}</td>
+                        <td>{{ stercketUser.health }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -76,7 +76,7 @@
                     </tr>
                     <tr>
                         <td>Health</td>
-                        <td>{{ healthStercketEnnemy }}</td>
+                        <td>{{ stercketEnnemy.health }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -84,7 +84,7 @@
         <div class="combat">
             <div class="infos-combat-div">
                 <table id="combat-infos-table">
-                    {% for round in combat %}
+                    {% for round in stercketUser.combat(stercketEnnemy) %}
                         <tr>
                             <td>{{ round }}</td>
                         </tr>
