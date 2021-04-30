@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\Stercket;
+
 class GameController extends AbstractController
 {
     /**
@@ -15,6 +17,13 @@ class GameController extends AbstractController
 
     public function play()
     {
-        return $this->twig->render('Game/play.html.twig');
+        $stercketUser = new Stercket();
+        $stercketEnnemy = new Stercket();
+        $stercketUser->initialise('player');
+        $stercketEnnemy->initialise('wood');
+        return $this->twig->render('Game/play.html.twig', [
+            "stercketUser" => $stercketUser,
+            "stercketEnnemy" => $stercketEnnemy,
+        ]);
     }
 }

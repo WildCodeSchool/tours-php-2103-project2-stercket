@@ -51,6 +51,6 @@ class HomeController extends AbstractController
                 $stercketManager->insert($woodStercket);
             }
         }
-        header("Location: Game/game");
+        header("Location: /Game/play");
     }
 }

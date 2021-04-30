@@ -17,7 +17,6 @@ class ItemController extends AbstractController
         return $this->twig->render('Item/index.html.twig', ['items' => $items]);
     }
 
-
     /**
      * Show informations for a specific item
      */

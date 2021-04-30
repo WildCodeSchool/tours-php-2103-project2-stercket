@@ -1,0 +1,97 @@
+
+{% block link %}
+<link rel="stylesheet" href="/assets/css/battle.css">
+{% endblock %}
+{% block content %}
+    <div class="battle-page">
+        <h1>FIGHT!</h1>
+        <div class="cross">
+            <p class="line-page-battle line1-page-battle"></p>
+            <p class="line-page-battle line2-page-battle"></p>
+        </div>
+        <div class="tables-stercket">
+            
+            <table class="table-sterket-User">
+                <thead>
+                    <tr>
+                        <th colspan="2">Your Sterket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{ stercketUser.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>{{ stercketUser.type }}</td>
+                    </tr>
+                    <tr>
+                        <td>Specie</td>
+                        <td>{{ stercketUser.specie }}</td>
+                    </tr>
+                    <tr>
+                        <td>Attack</td>
+                        <td>{{ stercketUser.attack }}</td>
+                    </tr>
+                    <tr>
+                        <td>Defense</td>
+                        <td>{{ stercketUser.defense }}</td>
+                    </tr>
+                    <tr>
+                        <td>Health</td>
+                        <td>{{ stercketUser.health }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>VS</h2>
+
+            <table class="table-sterket-ennemy">
+                <thead>
+                    <tr>
+                        <th colspan="2">Sterket enemy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{ stercketEnnemy.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>{{ stercketEnnemy.type }}</td>
+                    </tr>
+                    <tr>
+                        <td>Specie</td>
+                        <td>{{ stercketEnnemy.specie }}</td>
+                    </tr>
+                    <tr>
+                        <td>Attack</td>
+                        <td>{{ stercketEnnemy.attack }}</td>
+                    </tr>
+                    <tr>
+                        <td>Defense</td>
+                        <td>{{ stercketEnnemy.defense }}</td>
+                    </tr>
+                    <tr>
+                        <td>Health</td>
+                        <td>{{ stercketEnnemy.health }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="combat">
+            <div class="infos-combat-div">
+                <table id="combat-infos-table">
+                    {% for round in stercketUser.combat(stercketEnnemy) %}
+                        <tr>
+                            <td>{{ round }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}{% endblock %}

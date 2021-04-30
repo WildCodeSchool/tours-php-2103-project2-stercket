@@ -20,7 +20,7 @@ class Stercket
     private string $type;
     private int $attack;
     private int $defense;
-    private int $health = 30;
+    private int $health = 20;
     private string $owner;
 
     /*
@@ -127,8 +127,8 @@ class Stercket
         while ($this->isAlive() && $forestStercket->isAlive()) {
             $this->fight($forestStercket);
             $forestStercket->fight($this);
-            $logs[] = "Your stercket have now " . $this->getHealth() . " health points";
-            $logs[] = "Enemie's stercket have now " . $forestStercket->getHealth() . " health points";
+            $logs[] = $this->name . " have now " . $this->getHealth() . " health points";
+            $logs[] = $forestStercket->name . " have now " . $forestStercket->getHealth() . " health points";
         }
         return $logs;
     }
