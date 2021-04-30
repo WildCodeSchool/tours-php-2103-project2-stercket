@@ -5,10 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
 body {
-    background: url('/assets/images/homebackground.jpg') center no-repeat;
-    font-size: 2rem;
-
+    background: url(/assets/images/homebackground.jpg) center no-repeat;
+    font-size: 1.6rem;
+    height: 100vh;
+    background-size: cover;
 }
 
 h2,button,a { 
@@ -16,19 +20,7 @@ h2,button,a {
 }
 
 .button{
-    border: none;
-    font-size: 4rem;
-    outline-style: none;
-    padding: 1.6rem 2.4rem;
-    border-radius: 4rem;
-    line-height: 5rem;
-    width: 25rem;
-    letter-spacing: 2px;
-    font-weight: bold;
-    background-color: #fff;
-    background: linear-gradient(#FF9E57 0%,#FFF 100%);
-    opacity: 85%;
-   
+    font-weight: bold;   
 }
 
 .buttonPlay{
@@ -36,17 +28,24 @@ h2,button,a {
     color: black;
     display: flex;
     justify-content: center;
-    font-weight: bold;
 
 
 }
 
+.button:active {
 
+    transform: translate(0, 5px);
+}
 
 
 p {
     font-family: 'Roboto Condensed', cursive;
 }
+
+
+
+
+
 /* ========== MOBILE PORTRAIT PRESETS =================*/
 
 @media screen and (max-width: 500px)  {
@@ -55,37 +54,105 @@ p {
     body {
         background-size: cover;
         font-size: 2rem;
-        height: 100vh;
-        background-size: cover;
+        overflow: hidden;
+
         }
 
+    /* ========== MOBILE PORTRAIT RULES PART =================*/
+
+        .Rules{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            z-index: 99;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            font-size: 1.2rem;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
+            clip-path: circle(100px at 50% -30%);
+            -webkit-clip-path: circle(100px at 50% -30%);
+            transition: all 1s ease-out;
+    
+            }
+    
+            .Rules.open{
+                clip-path: circle(200% at 50% -15%);
+                -webkit-clip-path: circle(200% at 50% -15%);
+                transition: all 1s ease-out;
+            }
+
+
+            .crossHome{
+                height: 4rem;
+                width: 3.5rem;
+                position: absolute;
+                right: 2%;
+                top: 1.5rem;
+                display: flex;
+                flex-direction:column;
+                justify-content: space-around;
+                cursor: pointer;
+            }
+    
+            .lineOne{
+                width: 80%;
+                height: 5px;
+                background-color: black;
+                transform: rotateZ(45deg) translate(5px,10px);
+            }
+    
+            .lineTwo{
+                width: 80%;
+                height: 5px;
+                background-color: black;
+                transform: rotateZ(-45deg) translate(5px,-9px);
+    
+            }
+    
+            .Rules h2{
+                margin: 1.5rem;
+            }
+    
+            .Rules p {
+                margin: 0px 10px 0px 10px
+    
+            }
 
     .blockPresentation{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        margin: 50px 50px;
+        margin: 1vh 1vh;
         letter-spacing: 1px;
+        margin-bottom: 20px;
     }
 
     .welcome{
         font-size: 2rem;
-        margin-bottom: 20px;
+        margin-top: 60px;
+        margin-bottom: 10px;
     }
 
-    .StercketBattle{
+    .StercketBattle{       
         font-size: 4rem;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
-    .Rules {
-        display: none;
-    }
+
+    
 
     /*============= Button part mobile potrait ============*/
 
-
+    .blockButton {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
 
     button{
 
@@ -102,22 +169,34 @@ p {
 
 
     .button{
+        border: none;
+        font-size: 1rem;
+        outline-style: none;
+        border-radius: 4rem;
+        line-height: 2rem;
         width: 15rem;
-    }
-
-    .blockButton {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        
-    }
-
-    .button {
-        font-size: 35px;
+        height: 6rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        background: linear-gradient(#FF9E57 0%,#FFF 100%);
+        opacity: 85%;
+        margin: 1rem;
         padding: 1rem;
+        cursor: pointer;
+        font-size: 35px;
         margin-top: 50px;
+      
     }
+
+    .buttonPlay{
+        padding: 2rem;
+    }
+
+
+
+
+
+
     
 }
 
@@ -127,23 +206,80 @@ p {
 
 @media screen and (max-width: 850px) and (min-width: 501px)  {
 
-    .Rules {
-        display: none;
-    }
-
-
-
-
     body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: 5rem;
-        height: 100vh;
-        background-size: cover;
-        
+        overflow: hidden;
+
 
         }
+
+    /* ========== MOBILE LANDSCAPE RULES PART =================*/
+
+        .Rules{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            z-index: 99;
+            text-align: center;
+            height: 120%;
+            width: 100%;
+            font-size: 1rem;
+            margin-top: 5rem;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
+            clip-path: circle(100px at 50% -30%);
+            -webkit-clip-path: circle(100px at 50% -30%);
+            transition: all 1s ease-out;
+    
+            }
+    
+            .Rules.open{
+                clip-path: circle(200% at 50% -15%);
+                -webkit-clip-path: circle(200% at 50% -15%);
+                transition: all 1s ease-out;
+            }
+
+
+            .crossHome{
+                height: 4rem;
+                width: 3.5rem;
+                position: absolute;
+                right: 2%;
+                top: 1.5rem;
+                display: flex;
+                margin-top: 2rem;
+                flex-direction:column;
+                justify-content: space-around;
+                cursor: pointer;
+
+
+            }
+    
+            .lineOne{
+                width: 100%;
+                height: 5px;
+                background-color: black;
+                transform: rotateZ(45deg) translate(5px,10px);
+            }
+    
+            .lineTwo{
+                width: 100%;
+                height: 5px;
+                background-color: black;
+                transform: rotateZ(-45deg) translate(5px,-9px);
+    
+            }
+    
+            .Rules h2{
+                margin: 1rem;
+            }
+    
+            .Rules p {
+                margin: 0px 10px 0px 10px
+    
+            }
 
 
     .blockPresentation{
@@ -159,7 +295,9 @@ p {
 
     .welcome{
         font-size: 2rem;
-        margin-bottom: 7px;
+        margin-top: 7vh;
+        margin-bottom: 15px;
+
     }
 
     .StercketBattle{
@@ -176,7 +314,7 @@ p {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            margin-bottom: -5rem;
+            margin-bottom: 1rem;
         }
 
         button{
@@ -191,9 +329,18 @@ p {
         }
 
         .button{
-            font-size: 40px;
-            padding: 1rem;
-            width: 13rem;
+            border: none;
+            font-size: 2rem;
+            outline-style: none;
+            border-radius: 4rem;
+            line-height: 2rem;
+            width: 15rem;
+            letter-spacing: 2px;
+            background-color: #fff;
+            background: linear-gradient(#FF9E57 0%,#FFF 100%);
+            opacity: 85%;
+            margin: 1rem;
+ 
         }
 
         .buttonPlay{
@@ -203,11 +350,133 @@ p {
     
 
 
-
+    }
 /* ========== LAPTOP PRESETS =================*/
+
+@media screen and (min-width: 851px){
+
+
+    body{
+        display: flex;
+        justify-content: space-around;  
+       
+    }
+
+
+        /* ========== LAPTOP RULES PART =================*/
+
+    .Rules{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        z-index: 99;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        font-size: 2rem;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
+        clip-path: circle(100px at 50% -30%);
+        -webkit-clip-path: circle(100px at 50% -30%);
+        transition: all 1s ease-out;
+
+        }
+
+        .Rules.open{
+            clip-path: circle(200% at 50% -15%);
+            -webkit-clip-path: circle(200% at 50% -15%);
+            transition: all 1s ease-out;
+        }
+
+
+        /* ==== Cross part ====*/
+        .crossHome{
+            height: 4rem;
+            width: 3.5rem;
+            position: absolute;
+            right: 2%;
+            top: 1.5rem;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-around;
+            cursor: pointer;
+        }
+
+        .lineOne{
+            width: 100%;
+            height: 5px;
+            background-color: black;
+            transform: rotateZ(45deg) translate(5px,10px);
+        }
+
+        .lineTwo{
+            width: 100%;
+            height: 5px;
+            background-color: black;
+            transform: rotateZ(-45deg) translate(5px,-9px);
+
+        }
+
+        .Rules h2{
+            margin: 1.5rem;
+        }
+
+        .Rules p {
+
+            margin: 0rem 10rem;
+            letter-spacing: 2px;
+            line-height: 2rem;
+        }
+
+    .blockPresentation{
+        display: flex;
+        flex-direction: column;
+        margin-right: 20rem;
+
+    
+    }
+
+    .welcome{
+        font-size: 10rem;
+        margin-bottom: 20px;
+    }
+
+    .StercketBattle{       
+        font-size: 15rem;
+    }
+
+
+        /* ========== LAPTOP BUTTONS PART =================*/
+
+    
+
+    .button{
+        margin:1rem;
+    }
+
+   .PresentationButton{
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       width: 70rem;
+   }
+
+
+   .blockButton{
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+   }
+
+
+
+
+
+
 
 
 }
+
         
 
     
