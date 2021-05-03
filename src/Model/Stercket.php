@@ -22,7 +22,18 @@ class Stercket
     private int $defense;
     private int $health = 20;
     private string $owner;
+    private string $image;
 
+
+    public function __construct(string $owner = "")
+    {
+        if ($owner != "") {
+            $this->initialise($owner);
+        }
+        if (isset($this->specie)) {
+            $this->image = "/assets/images/sterckets/" . $this->specie . ".png";
+        }
+    }
     /*
      * Initialise the stercket datas with the args and random attack and defense
      */
@@ -80,6 +91,11 @@ class Stercket
     {
         $this->owner = $owner;
         return $this;
+    }
+
+    public function getImage(): string
+    {
+        return $this->image;
     }
 
     public function getAttack(): int

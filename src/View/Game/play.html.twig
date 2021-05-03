@@ -32,7 +32,7 @@
         
         <div id="showCollection" class="stercketCollection">
             {% for stercket in collection %}
-                <label for="stercket-{{ stercket.id }}"><img src="/assets/images/favicon.png" alt="test"></label>
+                <label for="stercket-{{ stercket.id }}"><img src={{ stercket.image }} alt="test"></label>
                 <label for="stercket-{{ stercket.id }}">{{ stercket.name }}</label>
                 <input name="userStercket" type="radio" id="stercket-{{ stercket.id }}">
             {% endfor %}
