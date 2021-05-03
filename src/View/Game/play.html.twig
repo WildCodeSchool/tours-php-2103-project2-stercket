@@ -31,21 +31,11 @@
         <label for="select.item" id="popup" class = "button buttonCollection">Collection</label>
         
         <div id="showCollection" class="stercketCollection">
-                <label for="stercket"><img src="/assets/images/favicon.png" alt="test"></label>
-                <input type="radio" id="stercket">
-            <a href="" class="stercket">Stercket 1</a>
-            
-            <a href="" class="stercket">Stercket 2</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
-            <a href="" class="stercket">Stercket 3</a>
+            {% for stercket in collection %}
+                <label for="stercket-{{ stercket.id }}"><img src="/assets/images/favicon.png" alt="test"></label>
+                <label for="stercket-{{ stercket.id }}">{{ stercket.name }}</label>
+                <input name="userStercket" type="radio" id="stercket-{{ stercket.id }}">
+            {% endfor %}
         </div>
         
         <button class = "button button-Battle"> Battle </button>
