@@ -1,5 +1,5 @@
 /* ========== GENERAL PRESETS =================*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,21 +19,25 @@ h2,button,a {
     font-family: 'Passero One', cursive;
 }
 
-.button{
+.button {
     font-weight: bold;   
 }
 
-.buttonPlay{
+.buttonContinue {
     text-decoration: none;
     color: black;
     display: flex;
     justify-content: center;
+}
 
-
+.buttonPlay {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
 }
 
 .button:active {
-
     transform: translate(0, 5px);
 }
 
@@ -42,107 +46,99 @@ p {
     font-family: 'Roboto Condensed', cursive;
 }
 
-
-
-
-
 /* ========== MOBILE PORTRAIT PRESETS =================*/
 
 @media screen and (max-width: 500px)  {
     
-
     body {
         background-size: cover;
         font-size: 2rem;
         overflow: hidden;
-
         }
 
     /* ========== MOBILE PORTRAIT RULES PART =================*/
 
-        .Rules{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: absolute;
-            z-index: 99;
-            text-align: center;
-            height: 100%;
-            width: 100%;
-            font-size: 1.2rem;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
-            clip-path: circle(100px at 50% -30%);
-            -webkit-clip-path: circle(100px at 50% -30%);
+    .Rules {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        z-index: 99;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        font-size: 1.6rem;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
+        clip-path: circle(100px at 50% -30%);
+        -webkit-clip-path: circle(100px at 50% -30%);
+        transition: all 1s ease-out;
+
+        }
+
+        .Rules.open {
+            clip-path: circle(200% at 50% -30%);
+            -webkit-clip-path: circle(200% at 50% -30%);
             transition: all 1s ease-out;
-    
-            }
-    
-            .Rules.open{
-                clip-path: circle(200% at 50% -15%);
-                -webkit-clip-path: circle(200% at 50% -15%);
-                transition: all 1s ease-out;
-            }
+        }
 
 
-            .crossHome{
-                height: 4rem;
-                width: 3.5rem;
-                position: absolute;
-                right: 2%;
-                top: 1.5rem;
-                display: flex;
-                flex-direction:column;
-                justify-content: space-around;
-                cursor: pointer;
-            }
+        .crossHome {
+            height: 4rem;
+            width: 3.5rem;
+            position: absolute;
+            right: 2%;
+            top: 1.5rem;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-around;
+            cursor: pointer;
+        }
     
-            .lineOne{
-                width: 80%;
-                height: 5px;
-                background-color: black;
-                transform: rotateZ(45deg) translate(5px,10px);
-            }
-    
-            .lineTwo{
-                width: 80%;
-                height: 5px;
-                background-color: black;
-                transform: rotateZ(-45deg) translate(5px,-9px);
-    
-            }
-    
-            .Rules h2{
-                margin: 1.5rem;
-            }
-    
-            .Rules p {
-                margin: 0px 10px 0px 10px
-    
-            }
+    .lineOne {
+        width: 80%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(45deg) translate(5px,10px);
+    }
 
-    .blockPresentation{
+    .lineTwo {
+        width: 80%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(-45deg) translate(5px,-9px);
+    }
+    
+    .Rules h2 {
+        font-size: 3.2rem;
+        padding: 1.6rem;
+    }
+
+    .Rules p {
+        margin: 0px 1.6rem 0px 1.6rem;
+        line-height: 2.4rem;
+    }
+
+    .blockPresentation {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         margin: 1vh 1vh;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         margin-bottom: 20px;
     }
 
-    .welcome{
+    .welcome {
         font-size: 2rem;
         margin-top: 60px;
         margin-bottom: 10px;
     }
 
-    .StercketBattle{       
+    .StercketBattle {       
         font-size: 4rem;
         margin-bottom: 10px;
     }
-
-
-    
 
     /*============= Button part mobile potrait ============*/
 
@@ -150,12 +146,10 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
-        
+        align-items: center;        
     }
 
-    button{
-
+    button {
         border: none;
         font-size: 3rem;
         padding: 1rem 2rem;
@@ -164,11 +158,10 @@ p {
         font-weight: 600;
         font-weight: bold;
         letter-spacing: 1px;
-
     }
 
 
-    .button{
+    .button {
         border: none;
         font-size: 1rem;
         outline-style: none;
@@ -184,23 +177,21 @@ p {
         padding: 1rem;
         cursor: pointer;
         font-size: 35px;
-        margin-top: 50px;
-      
+        margin-top: 50px;      
     }
 
-    .buttonPlay{
+    .buttonContinue {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttonPlay {
         padding: 2rem;
     }
-
-
-
-
-
-
-    
 }
-
-
 
 /* ========== MOBILE LANDSCAPE PRESETS =================*/
 
@@ -211,105 +202,91 @@ p {
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
-
-
         }
 
     /* ========== MOBILE LANDSCAPE RULES PART =================*/
 
-        .Rules{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: absolute;
-            z-index: 99;
-            text-align: center;
-            height: 120%;
-            width: 100%;
-            font-size: 1rem;
-            margin-top: 5rem;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
-            clip-path: circle(100px at 50% -30%);
-            -webkit-clip-path: circle(100px at 50% -30%);
-            transition: all 1s ease-out;
-    
-            }
-    
-            .Rules.open{
-                clip-path: circle(200% at 50% -15%);
-                -webkit-clip-path: circle(200% at 50% -15%);
-                transition: all 1s ease-out;
-            }
+    .Rules {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        z-index: 99;
+        text-align: center;
+        height: 120%;
+        width: 100%;
+        font-size: 2rem;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
+        clip-path: circle(100px at 50% -30%);
+        -webkit-clip-path: circle(100px at 50% -30%);
+        transition: all 1s ease-out;
+        overflow-x: hidden;
+    }
 
+    .Rules.open {
+        clip-path: circle(200% at 50% -15%);
+        -webkit-clip-path: circle(200% at 50% -15%);
+        transition: all 1s ease-out;
+    }
 
-            .crossHome{
-                height: 4rem;
-                width: 3.5rem;
-                position: absolute;
-                right: 2%;
-                top: 1.5rem;
-                display: flex;
-                margin-top: 2rem;
-                flex-direction:column;
-                justify-content: space-around;
-                cursor: pointer;
+    .crossHome {
+        height: 4rem;
+        width: 3.5rem;
+        position: absolute;
+        right: 2%;
+        top: 7%;
+        display: flex;
+        margin-top: 2rem;
+        flex-direction:column;
+        justify-content: space-around;
+        cursor: pointer;
+    }
 
+    .lineOne {
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(45deg) translate(5px,10px);
+    }
 
-            }
-    
-            .lineOne{
-                width: 100%;
-                height: 5px;
-                background-color: black;
-                transform: rotateZ(45deg) translate(5px,10px);
-            }
-    
-            .lineTwo{
-                width: 100%;
-                height: 5px;
-                background-color: black;
-                transform: rotateZ(-45deg) translate(5px,-9px);
-    
-            }
-    
-            .Rules h2{
-                margin: 1rem;
-            }
-    
-            .Rules p {
-                margin: 0px 10px 0px 10px
-    
-            }
+    .lineTwo {
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(-45deg) translate(5px,-9px);
+    }
 
+    .Rules h2 {
+        font-size: 4.8rem;
+        padding: 2.4rem;
+    }
 
-    .blockPresentation{
-        
+    .Rules p {
+        margin: 0px 3.2rem 0px 3.2rem;
+        line-height: 2.4rem;
+    }
+
+    .blockPresentation {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        letter-spacing: 1px;
-        margin: 0px 0px 0px 0px;
-        
+        letter-spacing: 1px; 
     }
 
-    .welcome{
+    .welcome {
         font-size: 2rem;
         margin-top: 7vh;
         margin-bottom: 15px;
-
     }
 
-    .StercketBattle{
+    .StercketBattle {
         font-size: 4rem;
         margin-bottom: 20px;
-
     }
 
         /*============= Button part mobile landscape ============*/
 
-
-            
         .blockButton {
             display: flex;
             justify-content: space-around;
@@ -317,18 +294,16 @@ p {
             margin-bottom: 1rem;
         }
 
-        button{
-
+        button {
             border: none;
             font-size: 3rem;
             padding: 1rem 2rem;
             border-radius: 3rem;
             line-height: 3rem;
             letter-spacing: 1px;
-    
         }
 
-        .button{
+        .button {
             border: none;
             font-size: 2rem;
             outline-style: none;
@@ -339,33 +314,17 @@ p {
             background-color: #fff;
             background: linear-gradient(#FF9E57 0%,#FFF 100%);
             opacity: 85%;
-            margin: 1rem;
- 
+            margin: 0;
         }
 
-        .buttonPlay{
-            margin-left: 100px;
+        .buttonPlay {
+            margin-left: 0;
         }
-
-    
-
-
     }
 /* ========== LAPTOP PRESETS =================*/
 
-@media screen and (min-width: 851px){
-
-
-    body{
-        display: flex;
-        justify-content: space-around;  
-       
-    }
-
-
-        /* ========== LAPTOP RULES PART =================*/
-
-    .Rules{
+@media  screen and (max-width: 1130px) and (min-width: 851px) {
+    .Rules {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -379,108 +338,212 @@ p {
         clip-path: circle(100px at 50% -30%);
         -webkit-clip-path: circle(100px at 50% -30%);
         transition: all 1s ease-out;
-
+        overflow-x: hidden;
         }
 
-        .Rules.open{
-            clip-path: circle(200% at 50% -15%);
-            -webkit-clip-path: circle(200% at 50% -15%);
-            transition: all 1s ease-out;
-        }
+    .Rules.open {
+        clip-path: circle(200% at 50% -15%);
+        -webkit-clip-path: circle(200% at 50% -15%);
+        transition: all 1s ease-out;
+    }
 
+    /* ==== Cross part ====*/
+    .crossHome {
+        height: 4rem;
+        width: 3.5rem;
+        position: absolute;
+        right: 2%;
+        top: 1.5rem;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+        cursor: pointer;
+    }
 
-        /* ==== Cross part ====*/
-        .crossHome{
-            height: 4rem;
-            width: 3.5rem;
-            position: absolute;
-            right: 2%;
-            top: 1.5rem;
-            display: flex;
-            flex-direction:column;
-            justify-content: space-around;
-            cursor: pointer;
-        }
+    .lineOne {
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(45deg) translate(5px,10px);
+    }
 
-        .lineOne{
-            width: 100%;
-            height: 5px;
-            background-color: black;
-            transform: rotateZ(45deg) translate(5px,10px);
-        }
+    .lineTwo {
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(-45deg) translate(5px,-9px);
+    }
 
-        .lineTwo{
-            width: 100%;
-            height: 5px;
-            background-color: black;
-            transform: rotateZ(-45deg) translate(5px,-9px);
+    .Rules h2 {
+        margin: 1.5rem;
+    }
 
-        }
+    .Rules p {
+        margin: 0rem 2rem;
+        letter-spacing: 2px;
+        line-height: 2.4rem;
+    }
 
-        .Rules h2{
-            margin: 1.5rem;
-        }
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
 
-        .Rules p {
-
-            margin: 0rem 10rem;
-            letter-spacing: 2px;
-            line-height: 2rem;
-        }
-
-    .blockPresentation{
+    .blockPresentation {
+        padding-left: 20%;
+        margin-left: 1.6rem;
         display: flex;
         flex-direction: column;
         margin-right: 20rem;
-
-    
     }
 
-    .welcome{
+    .welcome {
+        font-size: 8rem;
+        margin-bottom: 20px;
+    }
+
+    .StercketBattle {       
+        font-size: 12rem;
+    }
+
+        /* ========== LAPTOP BUTTONS PART =================*/
+
+    .button {
+        margin:1rem;
+        border: none;
+        font-size: 2rem;
+        outline-style: none;
+        border-radius: 4rem;
+        line-height: 2rem;
+        width: 17rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        background: linear-gradient(#FF9E57 0%,#FFF 100%);
+        opacity: 85%;
+        margin: 1.6rem;
+        padding: 1.6rem;
+    }
+
+    .PresentationButton {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 15%;
+    }
+
+    .blockButton {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        right: 15%;
+    }
+}
+
+@media screen and (min-width: 1131px){
+
+    body {
+        display: flex;
+        justify-content: space-around;  
+    }
+
+        /* ========== LAPTOP RULES PART =================*/
+
+    .Rules {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        z-index: 99;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        font-size: 2rem;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
+        clip-path: circle(100px at 50% -30%);
+        -webkit-clip-path: circle(100px at 50% -30%);
+        transition: all 1s ease-out;
+        overflow-x: hidden;
+        }
+
+    .Rules.open {
+        clip-path: circle(200% at 50% -15%);
+        -webkit-clip-path: circle(200% at 50% -15%);
+        transition: all 1s ease-out;
+    }
+
+    /* ==== Cross part ====*/
+    .crossHome {
+        height: 4rem;
+        width: 3.5rem;
+        position: absolute;
+        right: 2%;
+        top: 1.5rem;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+        cursor: pointer;
+    }
+
+    .lineOne {
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(45deg) translate(5px,10px);
+    }
+
+    .lineTwo {
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        transform: rotateZ(-45deg) translate(5px,-9px);
+    }
+
+    .Rules h2 {
+        margin: 1.5rem;
+    }
+
+    .Rules p {
+        margin: 0rem 2rem;
+        letter-spacing: 2px;
+        line-height: 2.4rem;
+    }
+
+    .blockPresentation {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20rem;
+    }
+
+    .welcome {
         font-size: 10rem;
         margin-bottom: 20px;
     }
 
-    .StercketBattle{       
+    .StercketBattle {       
         font-size: 15rem;
     }
 
-
         /* ========== LAPTOP BUTTONS PART =================*/
 
-    
-
-    .button{
+    .button {
         margin:1rem;
     }
 
-   .PresentationButton{
-       display: flex;
-       justify-content: space-around;
-       align-items: center;
-       width: 70rem;
-   }
+    .PresentationButton {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 70rem;
+    }
 
-
-   .blockButton{
-       display: flex;
-       flex-direction: column;
-       justify-content: space-between;
-   }
-
-
-
-
-
-
-
-
+    .blockButton {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
-
-        
-
-    
-
-
-
-    
