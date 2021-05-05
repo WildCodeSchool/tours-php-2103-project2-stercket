@@ -15,31 +15,36 @@
                     <div class="line line-1"></div>
                     <div class="line line-2"></div>
                     <div class="line line-3"></div>
-            </div>
+                </div>
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href='../Home/index' class="home"> Home </a>
+                        <a href='/Home/index' class="button homeButton"> Home </a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <button class = "button buttonRest"> Rest </button>
                     </li>
-
+                    <li class="nav-item">
+                        <input type="submit" form="battleForm" class = "button button-Battle" value="Battle">
+                    </li>
                 </ul>
             </nav>
+            <form action="/Game/play/" method="GET" id="battleForm">
+                <input type="button" id="popup" class = "button buttonCollection" value="Collection">
+                <div id="showCollection" class="stercketCollection">
+                    <div class="scrollCollection">
+                        {% for stercket in collection %}
+                        <div class="userCollectionStercket">
+                            <label for="stercket-{{ stercket.id }}">
+                                <img draggable="false" src={{ stercket.image }} alt="{{ stercket.name }} image">
+                                <input name="userStercket" type="radio" class="stercketRadio" id="stercket-{{ stercket.id }}" value={{ stercket.id }}>
+                                {{ stercket.name }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div> 
+            </form>
         </div>
-        <form action="" method="GET">
-        <label for="select.item" id="popup" class = "button buttonCollection">Collection</label>
-        
-        <div id="showCollection" class="stercketCollection">
-            {% for stercket in collection %}
-                <label for="stercket-{{ stercket.id }}"><img src={{ stercket.image }} alt="test"></label>
-                <label for="stercket-{{ stercket.id }}">{{ stercket.name }}</label>
-                <input name="userStercket" type="radio" id="stercket-{{ stercket.id }}">
-            {% endfor %}
-        </div>
-        
-        <button class = "button button-Battle"> Battle </button>
-        </form>
     {% endblock %}
     {% block script %}
             <script src="/script/script.js"></script>
