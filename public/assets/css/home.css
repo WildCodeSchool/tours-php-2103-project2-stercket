@@ -73,27 +73,26 @@ p {
         clip-path: circle(100px at 50% -30%);
         -webkit-clip-path: circle(100px at 50% -30%);
         transition: all 1s ease-out;
-
         }
 
-        .Rules.open {
-            clip-path: circle(200% at 50% -30%);
-            -webkit-clip-path: circle(200% at 50% -30%);
-            transition: all 1s ease-out;
-        }
+    .Rules.open {
+        clip-path: circle(200% at 50% -30%);
+        -webkit-clip-path: circle(200% at 50% -30%);
+        transition: all 1s ease-out;
+    }
 
 
-        .crossHome {
-            height: 4rem;
-            width: 3.5rem;
-            position: absolute;
-            right: 2%;
-            top: 1.5rem;
-            display: flex;
-            flex-direction:column;
-            justify-content: space-around;
-            cursor: pointer;
-        }
+    .crossHome {
+        height: 4rem;
+        width: 3.5rem;
+        position: absolute;
+        right: 2%;
+        top: 1.5rem;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+        cursor: pointer;
+    }
     
     .lineOne {
         width: 80%;
@@ -287,40 +286,40 @@ p {
 
         /*============= Button part mobile landscape ============*/
 
-        .blockButton {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        button {
-            border: none;
-            font-size: 3rem;
-            padding: 1rem 2rem;
-            border-radius: 3rem;
-            line-height: 3rem;
-            letter-spacing: 1px;
-        }
-
-        .button {
-            border: none;
-            font-size: 2rem;
-            outline-style: none;
-            border-radius: 4rem;
-            line-height: 2rem;
-            width: 15rem;
-            letter-spacing: 2px;
-            background-color: #fff;
-            background: linear-gradient(#FF9E57 0%,#FFF 100%);
-            opacity: 85%;
-            margin: 0;
-        }
-
-        .buttonPlay {
-            margin-left: 0;
-        }
+    .blockButton {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 1rem;
     }
+
+    button {
+        border: none;
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        border-radius: 3rem;
+        line-height: 3rem;
+        letter-spacing: 1px;
+    }
+
+    .button {
+        border: none;
+        font-size: 2rem;
+        outline-style: none;
+        border-radius: 4rem;
+        line-height: 2rem;
+        width: 15rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        background: linear-gradient(#FF9E57 0%,#FFF 100%);
+        opacity: 85%;
+        margin: 0;
+    }
+
+    .buttonPlay {
+        margin-left: 0;
+    }
+}
 /* ========== LAPTOP PRESETS =================*/
 
 @media  screen and (max-width: 1130px) and (min-width: 851px) {
