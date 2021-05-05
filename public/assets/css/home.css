@@ -41,6 +41,9 @@ h2,button,a {
     transform: translate(0, 5px);
 }
 
+.buttonRules {
+    z-index: 1;
+}
 
 p {
     font-family: 'Roboto Condensed', cursive;
@@ -189,6 +192,33 @@ p {
 
     .buttonPlay {
         padding: 2rem;
+        position: relative;
+    }
+
+    .buttonPlay::after {
+        content: 'Warning! This button reset the game from scratch!';
+        width: 80%;
+        border-radius: 4rem;
+        height: auto;
+        font-size: 2rem;
+        font-weight: bold;
+        display: none;
+        text-align: center;
+        position: absolute;
+        z-index: 99;
+        right: 105%;
+        top: 0;
+        line-height: 3.2rem;
+        padding: 0.8rem;
+        background-color: #fff;
+    }
+
+    .buttonRules {
+        z-index: 1;
+    }
+    
+    .buttonPlay:hover::after{
+        display: block;
     }
 }
 
@@ -318,6 +348,32 @@ p {
 
     .buttonPlay {
         margin-left: 0;
+        position: relative;
+    }
+
+    .buttonPlay::after {
+        content: 'Warning! This button reset the game from scratch!';
+        width: 100%;
+        border-radius: 4rem;
+        height: auto;
+        font-size: 2rem;
+        font-weight: bold;
+        display: none;
+        text-align: center;
+        position: absolute;
+        z-index: 99;
+        top: 100%;
+        line-height: 3.2rem;
+        padding: 0.8rem;
+        background-color: #fff;
+    }
+
+    .buttonRules {
+        z-index: 1;
+    }
+    
+    .buttonPlay:hover::after{
+        display: block;
     }
 }
 /* ========== LAPTOP PRESETS =================*/
@@ -441,6 +497,36 @@ p {
         position: relative;
         right: 15%;
     }
+
+    .buttonPlay {
+        margin-left: 10%;
+        position: relative;
+    }
+
+    .buttonPlay::after {
+        content: 'Warning! This button reset the game from scratch!';
+        width: 100%;
+        border-radius: 4rem;
+        height: auto;
+        font-size: 2rem;
+        font-weight: bold;
+        display: none;
+        text-align: center;
+        position: absolute;
+        z-index: 99;
+        right: 100%;
+        line-height: 3.2rem;
+        padding: 0.8rem;
+        background-color: #fff;
+    }
+
+    .buttonRules {
+        z-index: 1;
+    }
+    
+    .buttonPlay:hover::after{
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1131px){
@@ -544,5 +630,34 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .buttonPlay {
+        position: relative;
+    }
+
+    .buttonPlay::after {
+        content: 'Warning! This button reset the game from scratch!';
+        width: 100%;
+        border-radius: 4rem;
+        height: auto;
+        font-size: 3.2rem;
+        font-weight: bold;
+        display: none;
+        text-align: center;
+        position: absolute;
+        z-index: 99;
+        right: 100%;
+        line-height: 3.2rem;
+        padding: 1.2rem;
+        background-color: #fff;
+    }
+
+    .buttonRules {
+        z-index: 1;
+    }
+    
+    .buttonPlay:hover::after{
+        display: block;
     }
 }

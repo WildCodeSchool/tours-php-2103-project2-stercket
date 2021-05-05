@@ -30,6 +30,7 @@ class HomeController extends AbstractController
     public function initialise()
     {
         $stercketManager = new StercketManager();
+        $stercketManager->deleteAllSterckets();
         $collection = $stercketManager->selectAllAsObject();
         $nbUserStercket = 0;
         foreach ($collection as $stercket) {

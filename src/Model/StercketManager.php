@@ -87,4 +87,11 @@ class StercketManager extends AbstractManager
         }
         return $collection;
     }
+
+    public function deleteAllSterckets(): void
+    {
+        $query = 'TRUNCATE TABLE ' . static::TABLE;
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+    }
 }

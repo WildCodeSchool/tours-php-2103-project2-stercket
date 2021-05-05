@@ -121,14 +121,14 @@ class Stercket
         return $this->getHealth() > 0;
     }
     //function for entire combat
-    public function combat(Stercket $forestStercket): array
+    public function combat(Stercket $woodsStercket): array
     {
         $logs = [];
-        while ($this->isAlive() && $forestStercket->isAlive()) {
-            $this->fight($forestStercket);
-            $forestStercket->fight($this);
+        while ($this->isAlive() && $woodsStercket->isAlive()) {
+            $this->fight($woodsStercket);
+            $woodsStercket->fight($this);
             $logs[] = $this->name . " have now " . $this->getHealth() . " health points";
-            $logs[] = $forestStercket->name . " have now " . $forestStercket->getHealth() . " health points";
+            $logs[] = $woodsStercket->name . " have now " . $woodsStercket->getHealth() . " health points";
         }
         return $logs;
     }
