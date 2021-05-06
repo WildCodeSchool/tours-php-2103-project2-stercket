@@ -113,7 +113,7 @@ li {
     }
 }
 
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 641px) and (orientation:vertical) {
     .container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -155,96 +155,82 @@ li {
         max-height: 96px;
         max-width: 96px;
     }
-    /*
-    @media (max-width:800px) and (orientation: landscape) {
-        .nav-item,
-        .button {
-            font-family: 'Passero One', cursive;
-            border: none;
-            font-size: 2rem;
-            outline-style: none;
-            border-radius: 4rem;
-            line-height: 2rem;
-            width: 15rem;
-            letter-spacing: 2px;
-            background-color: #fff;
-            background: linear-gradient(#FF9E57 0%, #FFF 100%);
-            opacity: 85%;
-            margin: 1rem;
-            cursor: pointer;
-        }
-        .home {
-            color: black;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            padding: 1rem 3em;
-            margin: 0 -3em;
-        }
-        .navbar {
-            width: 200px;
-            height: 20%;
-            position: fixed;
-            top: 0;
-            right: -300px;
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-            margin-left: 50px;
-            transition: 0.5s ease-in;
-        }
-        .active {
-            right: -20px;
-        }
-        .hamburger-menu {
-            width: 30px;
-            height: 30px;
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-        .line {
-            width: 100%;
-            height: 3px;
-            background-color: orange;
-            transition: all 0.5s;
-        }
-        .active .line-1 {
-            transform: rotateZ(-45deg) translate(-8px, 6px);
-        }
-        .active .line-2 {
-            opacity: 0;
-        }
-        .active .line-3 {
-            transform: rotateZ(45deg) translate(-8px, -6px);
-        }
-        .nav-list {
-            margin: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .show {
-            border: black solid 1px;
-            border-radius: 10%;
-            width: 60%;
-            height: 20%;
-            display: flex;
-            flex-wrap: wrap;
-            overflow-y: scroll;
-            cursor: pointer;
-        }
-        .stercket {
-            outline-style: none;
-            list-style: none;
-            color: black;
-            margin: 20px;
-        }
-    } */
+}
+
+@media (max-width:800px) and (orientation: landscape) {
+    .navbar {
+        width: 200px;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        transition: 0.5s ease-in;
+    }
+    .active {
+        right: -35px;
+    }
+    .hamburger-menu {
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .line {
+        width: 100%;
+        height: 3px;
+        background-color: orange;
+        transition: all 0.5s;
+    }
+    .active .line-1 {
+        transform: rotateZ(-45deg) translate(-8px, 6px);
+    }
+    .active .line-2 {
+        opacity: 0;
+    }
+    .active .line-3 {
+        transform: rotateZ(45deg) translate(-8px, -6px);
+    }
+    .nav-list {
+        margin-top: 30px;
+    }
+    .container {
+        max-width: 100vh;
+        max-height: 100vh;
+        display: grid;
+        grid-template-columns: 20% repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+    .buttonCollection {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .show {
+        display: flex;
+    }
+    .stercketCollection {
+        grid-column: 1;
+        grid-row: 2 / 7;
+        height: 90%;
+        width: 180px;
+        margin: auto;
+        margin-left: 0.5rem;
+    }
+    .scrollCollection {
+        overflow-x: scroll;
+        align-items: baseline;
+        width: 100%;
+        height: 100%;
+    }
+    .userCollectionStercket {
+        height: auto;
+        margin: 1rem;
+        width: auto;
+    }
 }
