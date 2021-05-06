@@ -9,42 +9,42 @@
     {% endblock %}
     {% block content %}
         {{ include ('Game/battle.html.twig') }}
-        <div class="container">
-            <nav class="navbar">
-                <div class="hamburger-menu">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
-                </div>
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href='/Home/index' class="button homeButton"> Home </a>
-                    </li>
-                    <li class="nav-item">
-                        <button class = "button buttonRest"> Rest </button>
-                    </li>
-                    <li class="nav-item">
-                        <input type="submit" form="battleForm" class = "button button-Battle" value="Battle">
-                    </li>
-                </ul>
-            </nav>
-            <form action="/Game/play/" method="GET" id="battleForm">
+        <form action="/Game/play/" method="GET" id="battleForm">
+            <div class="container">
+                <nav class="navbar">
+                    <div class="hamburger-menu">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href='/Home/index' class="button homeButton"> Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <button class = "button buttonRest"> Rest </button>
+                        </li>
+                        <li class="nav-item">
+                            <input type="submit" form="battleForm" class = "button button-Battle" value="Battle">
+                        </li>
+                    </ul>
+                </nav>
                 <input type="button" id="popup" class = "button buttonCollection" value="Collection">
                 <div id="showCollection" class="stercketCollection">
                     <div class="scrollCollection">
                         {% for stercket in collection %}
                         <div class="userCollectionStercket">
-                            <label for="stercket-{{ stercket.id }}">
+                            <input name="userStercket" type="radio" class="stercketRadio" id="stercket-{{ stercket.id }}" value={{ stercket.id }}>
+                            <label class="stercketLabel" for="stercket-{{ stercket.id }}">
                                 <img draggable="false" src={{ stercket.image }} alt="{{ stercket.name }} image">
-                                <input name="userStercket" type="radio" class="stercketRadio" id="stercket-{{ stercket.id }}" value={{ stercket.id }}>
                                 {{ stercket.name }}
                             </label>
                         </div>
                         {% endfor %}
                     </div>
                 </div> 
-            </form>
-        </div>
+            </div>
+        </form>
     {% endblock %}
     {% block script %}
             <script src="/script/script.js"></script>

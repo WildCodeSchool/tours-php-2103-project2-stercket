@@ -5,14 +5,13 @@ body {
 
 li {
     list-style: none;
-    overflow: hidden;
 }
 
 .stercketCollection {
     display: none;
     border: black solid 1px;
-    border-radius: 10%;
-    max-width: 99%;
+    border-radius: 10px;
+    width: 90%;
     height: 104px;
     margin: auto;
 }
@@ -46,7 +45,7 @@ li {
     height: 0;
 }
 
-.stercketRadio:checked+h3 {
+.stercketRadio:checked+.stercketLabel {
     color: red;
 }
 
@@ -58,117 +57,106 @@ li {
     margin: 1rem;
 }
 
-.navbar {
-    width: 200px;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    transition: 0.5s ease-in;
-}
-
-.active {
-    right: -35px;
-}
-
-.hamburger-menu {
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.line {
-    width: 100%;
-    height: 3px;
-    background-color: orange;
-    transition: all 0.5s;
-}
-
-.active .line-1 {
-    transform: rotateZ(-45deg) translate(-8px, 6px);
-}
-
-.active .line-2 {
-    opacity: 0;
-}
-
-.active .line-3 {
-    transform: rotateZ(45deg) translate(-8px, -6px);
-}
-
 .nav-list {
     margin: 20px;
     text-align: center;
+}
+
+.stercketLabel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .show {
     display: flex;
 }
 
-
-/*
-@media screen and (min-width: 641px) {
-    .nav-item,
-    .button {
-        font-family: 'Passero One', cursive;
-        border: none;
-        font-size: 2rem;
-        outline-style: none;
-        border-radius: 4rem;
-        line-height: 2rem;
-        width: 15rem;
-        letter-spacing: 2px;
-        background-color: #fff;
-        background: linear-gradient(#FF9E57 0%, #FFF 100%);
-        opacity: 85%;
-        margin: 1rem;
-        cursor: pointer;
+@media screen and (max-width: 640px) {
+    .navbar {
+        width: 200px;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        transition: 0.5s ease-in;
     }
+    .active {
+        right: -35px;
+    }
+    .hamburger-menu {
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .line {
+        width: 100%;
+        height: 3px;
+        background-color: orange;
+        transition: all 0.5s;
+    }
+    .active .line-1 {
+        transform: rotateZ(-45deg) translate(-8px, 6px);
+    }
+    .active .line-2 {
+        opacity: 0;
+    }
+    .active .line-3 {
+        transform: rotateZ(45deg) translate(-8px, -6px);
+    }
+}
+
+@media screen and (min-width: 641px) {
     .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .nav-item {
+        text-align: center;
+        margin-top: 0;
+    }
+    .nav-list {
+        margin-top: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .navbar {
+        grid-column: 1 / 4;
+        grid-row: 1;
+    }
+    .buttonCollection {
+        grid-column: 4;
+        grid-row: 1;
+        margin-bottom: 4rem;
+    }
+    .stercketCollection {
+        grid-column: 1 / 5;
+        justify-content: space-around;
+        border-radius: 20px;
+    }
+    .userCollectionStercket {
+        width: auto;
+        margin: 1%;
         display: flex;
         flex-direction: column;
     }
-    .nav-item {
-        margin-top: 50px;
-        text-align: center;
+    .stercketCollection {
+        height: 156px
     }
-    .home {
-        color: black;
-        outline-style: none;
-        text-decoration: none;
-        position: relative;
-        z-index: 1;
-        padding: 1rem 3em;
-        margin: 0 -3em;
+    .userCollectionStercket img {
+        max-height: 96px;
+        max-width: 96px;
     }
-    .show {
-        border: black solid 1px;
-        border-radius: 10%;
-        width: 30%;
-        height: 20%;
-        display: flex;
-        flex-wrap: wrap;
-        overflow-y: scroll;
-        cursor: pointer;
-    }
-    .stercket {
-        outline-style: none;
-        list-style: none;
-        color: black;
-        margin: 20px;
-    }
-    @media screen and (max-width:800px) and (orientation: landscape) {
+    /*
+    @media (max-width:800px) and (orientation: landscape) {
         .nav-item,
         .button {
             font-family: 'Passero One', cursive;
@@ -258,5 +246,5 @@ li {
             color: black;
             margin: 20px;
         }
-    }
-}*/
+    } */
+}
