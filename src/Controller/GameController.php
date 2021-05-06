@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Stercket;
+use App\Model\StercketManager;
 
 class GameController extends AbstractController
 {
@@ -17,13 +18,19 @@ class GameController extends AbstractController
 
     public function play()
     {
-        $stercketUser = new Stercket();
-        $stercketEnnemy = new Stercket();
-        $stercketUser->initialise('player');
-        $stercketEnnemy->initialise('wood');
+        $stercketManager = new StercketManager();
+        $collection = $stercketManager->selectAllAsObject();
+        //just to begin with, changes will come
+        foreach ($collection as $stercket) {
+            if ($stercket->getOwner() === 'player') {
+                $stercketUser = $stercket;
+            } elseif ($stercket->getOwner() === 'wood') {
+                $stercketEnnemy = $stercket;
+            }
+        }
         return $this->twig->render('Game/play.html.twig', [
             "stercketUser" => $stercketUser,
-            "stercketEnnemy" => $stercketEnnemy,
+            "stercketEnnemy" => $stercketEnnemy
         ]);
     }
 }

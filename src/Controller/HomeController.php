@@ -31,51 +31,17 @@ class HomeController extends AbstractController
     {
         $stercketManager = new StercketManager();
         $stercketManager->deleteAllSterckets();
-        $collection = $stercketManager->selectAllAsObject();
-        $nbUserStercket = 0;
-        foreach ($collection as $stercket) {
-            if ($stercket->getOwner() === 'player') {
-                $nbUserStercket++;
-            }
-        }
-        if ($nbUserStercket === 0) {
-            $userStercket = new Stercket();
-            $userStercket->initialise('player');
-            $stercketManager->insert($userStercket);
-            for (
-                $nbWoodStercket = count($collection) - $nbUserStercket;
-                $nbWoodStercket < Stercket::MAX_WOOD_SIZE;
-                $nbWoodStercket++
-            ) {
-                $woodStercket = new Stercket();
-                $woodStercket->initialise('wood');
-                $stercketManager->insert($woodStercket);
-            }
-        }
-        header("Location: /Game/play");
-    }
-
-    public function continue()
-    {
-        $stercketManager = new StercketManager();
-        $collection = $stercketManager->selectAllAsObject();
-        $nbUserStercket = 0;
-        foreach ($collection as $stercket) {
-            if ($stercket->getOwner() === 'player') {
-                $nbUserStercket++;
-            }
-        }
-        if ($nbUserStercket === 0) {
-            $userStercket = new Stercket();
-            $userStercket->initialise('player');
-            for (
-                $nbWoodStercket = count($collection) - $nbUserStercket;
-                $nbWoodStercket < Stercket::MAX_WOOD_SIZE;
-                $nbWoodStercket++
-            ) {
-                $woodStercket = new Stercket();
-                $woodStercket->initialise('wood');
-            }
+        $userStercket = new Stercket();
+        $userStercket->initialise('player');
+        $stercketManager->insert($userStercket);
+        for (
+            $nbWoodStercket = 0;
+            $nbWoodStercket < Stercket::MAX_WOOD_SIZE;
+            $nbWoodStercket++
+        ) {
+            $woodStercket = new Stercket();
+            $woodStercket->initialise('wood');
+            $stercketManager->insert($woodStercket);
         }
         header("Location: /Game/play");
     }
