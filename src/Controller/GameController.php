@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Model\Stercket;
+use App\Model\StercketManager;
+
+use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
 
 class GameController extends AbstractController
 {
@@ -25,5 +28,22 @@ class GameController extends AbstractController
             "stercketUser" => $stercketUser,
             "stercketEnnemy" => $stercketEnnemy,
         ]);
+    }
+
+
+
+
+    //heal stercket
+    public function rest()
+    {
+        $stercket = new Stercket();
+        $stercketManager = new StercketManager();
+
+        $stercket->setHealth(Stercket::MAX_HEALT);
+        $stercketManager->updateHP($stercket);
+
+        header("Location: /Game/play");
+        
+
     }
 }

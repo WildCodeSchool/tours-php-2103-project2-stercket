@@ -87,4 +87,15 @@ class StercketManager extends AbstractManager
         }
         return $collection;
     }
+
+    public function updateHP(Stercket $stercket): void
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
+            SET`health`=:health
+ ");
+        $statement->bindValue('health', $stercket->getHealth(), \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+
 }
