@@ -18,7 +18,6 @@ body {
 }
 
 
-
 /*====== CROSS TO CLOSE THE BATTLE PAGE ======*/
 
 .cross {
@@ -49,6 +48,7 @@ body {
     transform: rotateZ(-45deg) translate(9px, -9px);
 }
 
+
 /*====== USE WITH JAVASCRIPT ======*/
 
 .change .line1-page-battle {
@@ -59,12 +59,16 @@ body {
     transform: rotateZ(45deg) translate(-9px, -9px);
 }
 
+
 /*====== THE BATTLE PAGE-GENERAL RULES =======*/
+
 .battle-page {
     display: none;
     text-align: center;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%); 
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.486) 0%, rgba(254, 162, 96, 0.801) 30%, rgba(254, 162, 96, 0.918) 50%, rgba(255, 145, 67, 0.945) 100%);
 }
+
 
 /*====== TABLE-STERKET ======*/
 
@@ -89,19 +93,20 @@ table thead tr {
     font-size: 2.8rem;
 }
 
-table th, 
+table th,
 table td {
     background-color: #fdf0de;
     color: rgb(32, 24, 24);
     padding: 1.6rem;
     letter-spacing: 2px;
 }
+
 tbody {
     font-weight: normal;
 }
 
-tbody tr, 
-td, 
+tbody tr,
+td,
 th {
     border: 1px solid #ddd;
 }
@@ -160,6 +165,7 @@ h2.fade {
 
 
 /*====== INFOS COMBAT ======*/
+
 .combat {
     position: relative;
     bottom: -3%;
@@ -186,7 +192,7 @@ h2.fade {
     overflow-y: scroll;
 }
 
-#combat-infos-table{
+#combat-infos-table {
     min-height: 100%;
     min-width: 100%;
     font-size: 2.4rem;
@@ -200,6 +206,8 @@ h2.fade {
 
 
 /*====== TABLETS, LAPTOPS & DESKTOPS ======*/
+
+
 /*=========================================*/
 
 @media screen and (min-width: 801px) {
@@ -222,20 +230,16 @@ h2.fade {
         -webkit-clip-path: circle(100px at 50% -22.5%);
         transition: all 1s ease-out;
     }
-
     /*======== USE THIS NEW CLASS WITH JS ========*/
-
     .battle-page.open {
         clip-path: circle(160% at 50% -22.5%);
         -webkit-clip-path: circle(160% at 50% -22.5%);
     }
-
     .cross {
         width: 4%;
         top: 4%;
         right: 2%;
     }
-
     h1 {
         letter-spacing: 2px;
         margin-top: 2%;
@@ -247,13 +251,11 @@ h2.fade {
         align-items: center;
         color: #fff;
     }
-
     h2 {
         letter-spacing: 2px;
         font-size: 8rem
     }
-
-    .tables-stercket{
+    .tables-stercket {
         position: relative;
         bottom: -4%;
         max-height: 50%;
@@ -265,9 +267,6 @@ h2.fade {
         font-weight: bold;
         color: #fff;
     }
-
-    
-
     .infos-combat-div {
         position: relative;
         top: 15%;
@@ -277,68 +276,54 @@ h2.fade {
         width: 45%;
         overflow-y: scroll;
     }
-    
-    #combat-infos-table{
+    #combat-infos-table {
         min-height: 15%;
         min-width: 100%;
         font-size: 2.4rem;
         color: #fff;
     }
-
-    
 }
 
 
 /*====== LAPTOPS, TABLETS, SOME ADJUSTEMENTS FOR THE TABLES ======*/
 
 @media screen and (max-width: 1400px) {
-
     .cross {
         width: 4%;
         top: 4%;
         right: 2%;
     }
-
     h1 {
         font-size: 7rem;
         position: relative;
         top: 1%;
     }
-
     h2 {
         font-size: 4.8rem
     }
-
     table thead tr {
         font-size: 2.4rem;
     }
-    
-    table th, 
+    table th,
     table td {
         padding: 1.2rem;
     }
-
-    .tables-stercket{
+    .tables-stercket {
         position: relative;
         bottom: -5%;
         max-height: 45%;
         height: 45%;
         font-size: 2.4rem;
-        
     }
-
     .table-sterket-User {
         margin-left: 4rem;
     }
-    
     .table-sterket-ennemy {
         margin-right: 4rem;
     }
-
     .combat {
         height: 35%;
     }
-
     .infos-combat-div {
         position: relative;
         top: 27%;
@@ -348,53 +333,42 @@ h2.fade {
         width: 45%;
         overflow-y: scroll;
     }
-    
-    #combat-infos-table{
+    #combat-infos-table {
         min-height: 15%;
         min-width: 100%;
         font-size: 2.4rem;
         color: #fff;
     }
-
-
 }
 
 @media screen and (max-width: 1150px) {
-
     .cross {
         width: 5%;
         top: 4%;
         right: 2%;
     }
-
     h1 {
         font-size: 7rem;
         position: relative;
         top: 2%;
     }
-
     h2 {
         font-size: 4.8rem
     }
-
     table thead tr {
         font-size: 2rem;
     }
-    
-    table th, 
+    table th,
     table td {
         padding: 0.8rem;
     }
-
-    .tables-stercket{
+    .tables-stercket {
         position: relative;
         bottom: 0%;
         max-height: 35%;
         height: 35%;
         font-size: 2rem;
-        
     }
-
     .infos-combat-div {
         position: relative;
         top: 10%;
@@ -404,50 +378,41 @@ h2.fade {
         width: 50%;
         overflow-y: scroll;
     }
-    
-    #combat-infos-table{
+    #combat-infos-table {
         min-height: 15%;
         min-width: 100%;
         font-size: 2rem;
         color: #fff;
     }
-
     .table-sterket-User {
         margin-left: 4rem;
     }
-    
     .table-sterket-ennemy {
         margin-right: 4rem;
     }
-
 }
 
 @media screen and (max-width: 1000px) {
-
     .cross {
         width: 6%;
         top: 4%;
         right: 2%;
     }
-
     .table-sterket-User {
         margin-left: 2.4rem;
     }
-    
     .table-sterket-ennemy {
         margin-right: 2.4rem;
     }
 }
 
 @media screen and (max-width: 900px) {
-
     .cross {
         width: 7%;
         top: 4%;
         right: 2%;
     }
-
-    #combat-infos-table{  
+    #combat-infos-table {
         width: 45%;
     }
 }
@@ -474,20 +439,16 @@ h2.fade {
         -webkit-clip-path: circle(100px at 50% -22.5%);
         transition: all 1s ease-out;
     }
-
     /*======== USE THIS NEW CLASS WITH JS ========*/
-
     .battle-page.open {
         clip-path: circle(160% at 50% -22.5%);
         -webkit-clip-path: circle(160% at 50% -22.5%);
     }
-
     .cross {
         width: 7%;
         top: 4%;
         right: 2%;
     }
-
     h1 {
         position: relative;
         top: 2%;
@@ -501,13 +462,11 @@ h2.fade {
         align-items: center;
         color: #fff;
     }
-
     h2 {
         letter-spacing: 2px;
         font-size: 3.2rem
     }
-
-    .tables-stercket{
+    .tables-stercket {
         position: relative;
         max-height: 35%;
         height: 35%;
@@ -518,15 +477,12 @@ h2.fade {
         font-weight: bold;
         color: #fff;
     }
-
     .table-sterket-User {
         margin-left: 1.6rem;
     }
-    
     .table-sterket-ennemy {
         margin-right: 1.6rem;
     }
-
     .infos-combat-div {
         position: relative;
         top: 10%;
@@ -536,46 +492,36 @@ h2.fade {
         width: 70%;
         overflow-y: scroll;
     }
-    
-    #combat-infos-table{
+    #combat-infos-table {
         min-height: 15%;
         min-width: 100%;
         font-size: 1.6rem;
         color: #fff;
     }
-    
 }
 
 @media screen and (max-width: 650px) {
-    
-
     /*======== USE THIS NEW CLASS WITH JS ========*/
-
     .battle-page.open {
         clip-path: circle(160% at 50% -22.5%);
         -webkit-clip-path: circle(160% at 50% -22.5%);
     }
-
     .cross {
         width: 7%;
         top: 3%;
         right: 2%;
     }
-
     h1 {
-        
         height: 7%;
         font-size: 5rem;
         position: relative;
         top: 3%;
     }
-
     h2 {
         letter-spacing: 2px;
         font-size: 2.5rem
     }
-
-    .tables-stercket{
+    .tables-stercket {
         position: relative;
         max-height: 35%;
         height: 35%;
@@ -586,15 +532,12 @@ h2.fade {
         font-weight: bold;
         color: #fff;
     }
-
     .table-sterket-User {
         margin-left: 1.6rem;
     }
-    
     .table-sterket-ennemy {
         margin-right: 1.6rem;
     }
-
     .infos-combat-div {
         position: relative;
         top: 10%;
@@ -604,24 +547,20 @@ h2.fade {
         width: 70%;
         overflow-y: scroll;
     }
-    
-    #combat-infos-table{
+    #combat-infos-table {
         min-height: 15%;
         min-width: 100%;
         font-size: 1.6rem;
         color: #fff;
     }
-    
 }
 
 @media screen and (max-width: 550px) {
-
     h2 {
         position: relative;
         top: 68.5%;
     }
-
-    .tables-stercket{
+    .tables-stercket {
         position: relative;
         max-height: 35%;
         height: 35%;
@@ -631,64 +570,53 @@ h2.fade {
         font-weight: bold;
         color: #fff;
     }
-
     .table-sterket-User {
         margin: 0 1.6rem 0 2.4rem;
         font-size: 1.2rem;
     }
-    
     .table-sterket-ennemy {
         margin: 0 1.6rem 0 1.6rem;
         font-size: 1.2rem;
     }
-
     h1 {
         position: relative;
         top: 2.5%;
     }
-
     .cross {
         width: 8%;
         top: 3%;
         right: 3%;
     }
-
-    #combat-infos-table{
+    #combat-infos-table {
         width: 70%;
         font-size: 1.2rem;
     }
 }
 
 @media screen and (max-width: 450px) {
-
     h1 {
         position: relative;
         top: 2.5%;
     }
-
     .cross {
         width: 8%;
         top: 3%;
         right: 3%;
     }
-
-    .tables-stercket{
+    .tables-stercket {
         position: relative;
         max-height: 35%;
         height: 35%;
         margin: auto 0;
     }
-
     .table-sterket-User {
         margin: 0 0 0 2.4rem;
         font-size: 1.2rem;
     }
-    
     .table-sterket-ennemy {
         margin: 0 1.6rem 0 0;
         font-size: 1.2rem;
     }
-
     .infos-combat-div {
         position: relative;
         top: 10%;
@@ -698,62 +626,50 @@ h2.fade {
         width: 85%;
         overflow-y: scroll;
     }
-
-    #combat-infos-table{
+    #combat-infos-table {
         font-size: 1.2rem;
     }
 }
 
 @media screen and (max-width: 400px) {
-
     table thead tr {
         font-size: 1.2rem;
     }
-    
-    table th, 
+    table th,
     table td {
         padding: 0.8rem 0.6rem;
     }
-
     .table-sterket-User {
         margin: 0 0.8rem 0 1.6rem;
         font-size: 1rem;
     }
-    
     .table-sterket-ennemy {
         margin: 0 1.6rem 0 0.8rem;
         font-size: 1rem;
     }
-
-
-    #combat-infos-table{
+    #combat-infos-table {
         width: 70%;
         font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 350px) {
-
     table thead tr {
         font-size: 1.2rem;
     }
-    
-    table th, 
+    table th,
     table td {
         padding: 0.8rem 0.6rem;
     }
-
     .table-sterket-User {
         margin: 0 0.2rem 0 0.8rem;
         font-size: 1rem;
     }
-    
     .table-sterket-ennemy {
         margin: 0 0.8rem 0 0.2rem;
         font-size: 1rem;
     }
-
-    #combat-infos-table{
+    #combat-infos-table {
         width: 70%;
         font-size: 1rem;
     }

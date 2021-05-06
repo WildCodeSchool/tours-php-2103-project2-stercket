@@ -9,43 +9,63 @@
     {% endblock %}
     {% block content %}
         {{ include ('Game/battle.html.twig') }}
-        <div class="container">
-            <nav class="navbar">
-                <div class="hamburger-menu">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
+        <form action="/Game/play/" method="POST" id="battleForm">
+            <div class="container">
+                <nav class="navbar">
+                    <div class="hamburger-menu">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href='/Home/index' class="button homeButton"> Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <button class = "button buttonRest"> Rest </button>
+                        </li>
+                        <li class="nav-item">
+                            <input type="submit" form="battleForm" class = "button button-Battle" value="Battle">
+                        </li>
+                    </ul>
+                </nav>
+                <input type="button" id="popup" class = "button buttonCollection" value="Collection">
+                <div id="showCollection" class="stercketCollection">
+                    <div class="scrollCollection">
+                        {% for stercket in collection %}
+                        <div class="userCollectionStercket">
+                            <input name="userStercket" type="radio" class="stercketRadio" id="stercket-{{ stercket.id }}" value={{ stercket.id }}>
+                            <label class="stercketLabel" for="stercket-{{ stercket.id }}">
+                                <img draggable="false" src={{ stercket.image }} alt="{{ stercket.name }} image">
+                                {{ stercket.name }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="woodStercket1" class="woodStercket">
+                    <input name="woodStercket" type="radio" class="stercketRadio" id="stercket-{{ woodSterckets.0.id }}" value={{ woodSterckets.0.id }}>
+                    <label class="stercketLabel" for="stercket-{{ woodSterckets.0.id }}">
+                        <img class="woodImage" draggable="false" src={{ woodSterckets.0.image }} alt="{{ woodSterckets.0.name }} image">
+                        {{ woodSterckets.0.name }}
+                    </label>
+                </div>
+                <div id="woodStercket2" class="woodStercket">
+                    <input name="woodStercket" type="radio" class="stercketRadio" id="stercket-{{ woodSterckets.1.id }}" value={{ woodSterckets.1.id }}>
+                    <label class="stercketLabel" for="stercket-{{ woodSterckets.1.id }}">
+                        <img class="woodImage" draggable="false" src={{ woodSterckets.1.image }} alt="{{ woodSterckets.1.name }} image">
+                        {{ woodSterckets.1.name }}
+                    </label>
+                </div>
+                <div id="woodStercket3" class="woodStercket">
+                    <input name="woodStercket" type="radio" class="stercketRadio" id="stercket-{{ woodSterckets.2.id }}" value={{ woodSterckets.2.id }}>
+                    <label class="stercketLabel" for="stercket-{{ woodSterckets.2.id }}">
+                        <img class="woodImage" draggable="false" src={{ woodSterckets.2.image }} alt="{{ woodSterckets.2.name }} image">
+                        {{ woodSterckets.2.name }}
+                    </label>
+                </div>
             </div>
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href='../Home/index' class="home"> Home </a>
-                    </li>
-                    <li>
-                        <button class = "button buttonRest"> Rest </button>
-                    </li>
-                    <li>
-                        <button class = "button button-Battle"> Battle </button>
-                    </li>
-
-                </ul>
-            </nav>
-        </div>
-        <button id="popup" class = "button buttonCollection"> Collection </button>
-        <div id="showCollection" class="stercketCollection">
-        <a href="" class="stercket">Stercket 1</a>
-        <a href="" class="stercket">Stercket 2</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        <a href="" class="stercket">Stercket 3</a>
-        
-        </div>
+        </form>
     {% endblock %}
     {% block script %}
             <script src="/script/script.js"></script>
