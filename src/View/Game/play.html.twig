@@ -9,7 +9,7 @@
     {% endblock %}
     {% block content %}
         {{ include ('Game/battle.html.twig') }}
-        <form action="/Game/play/" method="GET" id="battleForm">
+        <form action="/Game/play/" method="POST" id="battleForm">
             <div class="container">
                 <nav class="navbar">
                     <div class="hamburger-menu">
