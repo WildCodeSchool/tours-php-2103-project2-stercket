@@ -49,7 +49,6 @@ li {
     color: red;
 }
 
-.nav-item,
 .button {
     font-size: 2rem;
     line-height: 2rem;
@@ -113,7 +112,7 @@ li {
     }
 }
 
-@media screen and (min-width: 641px) and (orientation:vertical) {
+@media screen and (min-width: 641px) and (orientation:portrait) {
     .container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -211,9 +210,6 @@ li {
         grid-column: 1;
         grid-row: 1;
     }
-    .show {
-        display: flex;
-    }
     .stercketCollection {
         grid-column: 1;
         grid-row: 2 / 7;
@@ -232,5 +228,56 @@ li {
         height: auto;
         margin: 1rem;
         width: auto;
+    }
+}
+
+@media screen and (min-width:801px) and (orientation: landscape) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr) 4fr 4fr;
+    }
+    .navbar {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        margin: auto;
+        height: 100%;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        margin: 0;
+    }
+    .buttonCollection {
+        grid-column: 1;
+        grid-row: 4;
+        margin: auto;
+    }
+    .show {
+        display: flex;
+    }
+    .stercketCollection {
+        grid-column: 1;
+        grid-row: 5 / 7;
+        height: 100%;
+        width: 100%;
+        margin-left: 0.5rem;
+    }
+    .scrollCollection {
+        overflow-x: scroll;
+        width: 100%;
+    }
+    .userCollectionStercket {
+        height: auto;
+        margin: 1rem;
+        max-width: 32%;
+    }
+    .userCollectionStercket img {
+        max-height: 128px;
+        max-width: 128px;
     }
 }
