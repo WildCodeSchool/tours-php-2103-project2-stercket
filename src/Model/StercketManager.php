@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use PDOException;
+
 class StercketManager extends AbstractManager
 {
     public const TABLE = 'stercket';
@@ -86,5 +88,48 @@ class StercketManager extends AbstractManager
             $collection[] = $stercket;
         }
         return $collection;
+    }
+
+    /**
+     * Get the Stercket of the given id as an instance of the Stecket class
+     *
+     * @param integer $id : the id of the wanted stercket
+     * @return Stercket|null
+     */
+    public function selectOneByIdAdObject(int $id): ?Stercket
+    {
+        try {
+            $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE id=:id");
+        } catch (PDOException $exception) {
+            return null;
+        }
+        if (!$statement->bindValue(":id", $id, \PDO::PARAM_INT)) {
+            return null;
+        }
+        if (!$statement->execute()) {
+            return null;
+        }
+        $stercket = $statement->fetchObject(Stercket::class);
+        if ($stercket === false) {
+            return null;
+        }
+        return $stercket;
+    }
+
+    /**
+     * Get a random Stercket from the woods
+     * @return Stercket|null
+     */
+    public function selectRandomFromWood(): ?Stercket
+    {
+        $stercket = null;
+        $statement = $this->pdo->query("SELECT * FROM " . self::TABLE . " WHERE owner='" . Stercket::OWNERS[0] . "'");
+        if ($statement === false) {
+            return null;
+        }
+        for ($i = 0; $i < rand(1, $statement->rowCount()); $i++) {
+            $stercket = $statement->fetchObject(Stercket::class);
+        }
+        return $stercket;
     }
 }

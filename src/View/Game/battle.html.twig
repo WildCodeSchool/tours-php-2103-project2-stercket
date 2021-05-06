@@ -1,3 +1,5 @@
+{% extends "layout.html.twig" %}
+
 
 {% block link %}
 <link rel="stylesheet" href="/assets/css/battle.css">
@@ -84,7 +86,7 @@
         <div class="combat">
             <div class="infos-combat-div">
                 <table id="combat-infos-table">
-                    {% for round in stercketUser.combat(stercketEnnemy) %}
+                    {% for round in log %}
                         <tr>
                             <td>{{ round }}</td>
                         </tr>
@@ -94,4 +96,3 @@
         </div>
     </div>
 {% endblock %}
-{% block script %}{% endblock %}
