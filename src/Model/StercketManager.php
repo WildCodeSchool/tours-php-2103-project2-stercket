@@ -96,6 +96,4 @@ class StercketManager extends AbstractManager
         $statement->bindValue('health', $stercket->getHealth(), \PDO::PARAM_INT);
         $statement->execute();
     }
-
-
 }
