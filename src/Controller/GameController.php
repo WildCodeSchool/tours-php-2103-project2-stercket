@@ -48,6 +48,7 @@ class GameController extends AbstractController
             $woodStercket = new Stercket();
             $woodStercket->initialise('wood');
             $stercketManager->insert($woodStercket);
+            $woodSterckets[] = $stercketManager->selectOneByIdAsObject($woodStercket->getId());
         }
         return $this->twig->render('Game/play.html.twig', [
             "collection" => $playerSterckets,
