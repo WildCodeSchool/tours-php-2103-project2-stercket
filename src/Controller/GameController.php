@@ -20,17 +20,7 @@ class GameController extends AbstractController
     {
         $stercketManager = new StercketManager();
         $collection = $stercketManager->selectAllAsObject();
-        //just to begin with, changes will come
-        foreach ($collection as $stercket) {
-            if ($stercket->getOwner() === 'player') {
-                $stercketUser = $stercket;
-            } elseif ($stercket->getOwner() === 'wood') {
-                $stercketEnnemy = $stercket;
-            }
-        }
-        return $this->twig->render('Game/play.html.twig', [
-            "stercketUser" => $stercketUser,
-            "stercketEnnemy" => $stercketEnnemy
+
         ]);
     }
 }

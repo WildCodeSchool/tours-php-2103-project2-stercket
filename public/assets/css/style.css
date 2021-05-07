@@ -1,3 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Passero One', cursive;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
 .button {
     font-family: "Passero One", cursive;
     border: none;
@@ -9,22 +25,38 @@
     width: 25rem;
     letter-spacing: 2px;
     background-color: #fff;
-    background: linear-gradient(#FF9E57 0%,#FFF 100%);
+    background: linear-gradient(#FF9E57 0%, #FFF 100%);
     opacity: 85%;
-    cursor:pointer;   
+    cursor: pointer;
+    color: black;
 }
 
-    @font-face {
-        font-family: 'Passero One';
-        src: url('../fonts/passero-one-v14-latin-regular.woff2') format('woff2'), 
-             url('../fonts/passero-one-v14-latin-regular.woff') format('woff'), 
-             url('../fonts/passero-one-v14-latin-regular.ttf') format('truetype');
-      }
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
 
+.button:active {
+    transform: translate(0, 5px);
+}
+
+img {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@font-face {
+    font-family: 'Passero One';
+    src: url('../fonts/passero-one-v14-latin-regular.woff2') format('woff2'), url('../fonts/passero-one-v14-latin-regular.woff') format('woff'), url('../fonts/passero-one-v14-latin-regular.ttf') format('truetype');
+}
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('../fonts/roboto-condensed-v19-latin-regular.woff2') format('woff2'), 
-         url('../fonts/roboto-condensed-v19-latin-regular.woff') format('woff'), 
-         url('../fonts/roboto-condensed-v19-latin-regular.ttf') format('truetype');
-  }
+    src: url('../fonts/roboto-condensed-v19-latin-regular.woff2') format('woff2'), url('../fonts/roboto-condensed-v19-latin-regular.woff') format('woff'), url('../fonts/roboto-condensed-v19-latin-regular.ttf') format('truetype');
+}
