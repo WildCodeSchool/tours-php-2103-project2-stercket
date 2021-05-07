@@ -40,14 +40,11 @@ class GameController extends AbstractController
 
 
 
-    //heal stercket
+     //heal stercket
     public function rest()
     {
-        $stercket = new Stercket();
         $stercketManager = new StercketManager();
-
-        $stercket->setHealth(Stercket::MAX_HEALT);
-        $stercketManager->updateHP($stercket);
+        $stercketManager->updateHP();
 
         header("Location: /Game/play");
     }
