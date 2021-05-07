@@ -32,12 +32,16 @@ class GameController extends AbstractController
         if ($action === "battle" && isset($_POST["userStercket"]) && isset($_POST["woodStercket"])) {
             $userStercket = $stercketManager->selectOneByIdAsObject($_POST["userStercket"]);
             $woodStercket = $stercketManager->selectOneByIdAsObject($_POST["woodStercket"]);
+            $logs = $userStercket->combat($woodStercket);
+            //$stercketManager->update($userStercket);
+            //$stercketManager->update($woodStercket);
             return $this->twig->render('Game/play.html.twig', [
                 "action" => "battle",
                 "stercketUser" => $userStercket,
                 "stercketEnnemy" => $woodStercket,
                 "collection" => $playerSterckets,
-                "woodSterckets" => $woodSterckets
+                "woodSterckets" => $woodSterckets,
+                "logs" => $logs
             ]);
         }
         return $this->twig->render('Game/play.html.twig', [
