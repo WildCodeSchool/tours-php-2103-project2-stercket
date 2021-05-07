@@ -21,6 +21,8 @@ class GameController extends AbstractController
         $stercketManager = new StercketManager();
         $collection = $stercketManager->selectAllAsObject();
         //just to begin with, changes will come
+        $stercketUser = null;
+        $stercketEnnemy = null;
         foreach ($collection as $stercket) {
             if ($stercket->getOwner() === 'player') {
                 $stercketUser = $stercket;
