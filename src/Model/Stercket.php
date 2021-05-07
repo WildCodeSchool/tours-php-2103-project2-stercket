@@ -147,6 +147,7 @@ class Stercket
             $logs[] = $this->name . " have now " . $this->getHealth() . " health points";
             $logs[] = $woodsStercket->name . " have now " . $woodsStercket->getHealth() . " health points";
         }
+        $this->capture($woodsStercket);
         return $logs;
     }
 
@@ -156,5 +157,12 @@ class Stercket
         $yValue = mt_rand() / mt_getrandmax();
         $number = sqrt(-2 * log($xValue)) * cos(2 * pi() * $yValue) * $standardDeviation + $mean;
         return intval($number);
+    }
+
+    public function capture(Stercket $stercketEnnemy)
+    {
+        if ($stercketEnnemy->getHealth() === 0) {
+            $stercketEnnemy->setOwner(self::OWNERS[1]);
+        }
     }
 }

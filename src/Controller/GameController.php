@@ -19,8 +19,18 @@ class GameController extends AbstractController
     public function play(string $action = "")
     {
         $stercketManager = new StercketManager();
+        if ($action === "battle" && isset($_POST["userStercket"]) && isset($_POST["woodStercket"])) {
+            $userStercket = $stercketManager->selectOneByIdAsObject($_POST["userStercket"]);
+            $woodStercket = $stercketManager->selectOneByIdAsObject($_POST["woodStercket"]);
+            $logs = $userStercket->combat($woodStercket);
+            $stercketManager->update($userStercket);
+            $stercketManager->update($woodStercket);
+            $this->twig->addGlobal("action", "battle");
+            $this->twig->addGlobal("stercketUser", $userStercket);
+            $this->twig->addGlobal("stercketEnnemy", $woodStercket);
+            $this->twig->addGlobal("logs", $logs);
+        }
         $collection = $stercketManager->selectAllAsObject();
-
         $playerSterckets = [];
         $woodSterckets = [];
         foreach ($collection as $stercket) {
@@ -30,16 +40,15 @@ class GameController extends AbstractController
                 $woodSterckets[] = $stercket;
             }
         }
-        if ($action === "battle" && isset($_POST["userStercket"]) && isset($_POST["woodStercket"])) {
-            $userStercket = $stercketManager->selectOneByIdAsObject($_POST["userStercket"]);
-            $woodStercket = $stercketManager->selectOneByIdAsObject($_POST["woodStercket"]);
-            return $this->twig->render('Game/play.html.twig', [
-                "action" => "battle",
-                "stercketUser" => $userStercket,
-                "stercketEnnemy" => $woodStercket,
-                "collection" => $playerSterckets,
-                "woodSterckets" => $woodSterckets
-            ]);
+        for (
+            $nbWoodStercket = count($woodSterckets);
+            $nbWoodStercket < Stercket::MAX_WOOD_SIZE;
+            $nbWoodStercket++
+        ) {
+            $woodStercket = new Stercket();
+            $woodStercket->initialise('wood');
+            $stercketManager->insert($woodStercket);
+            $woodSterckets[] = $stercketManager->selectOneByIdAsObject($woodStercket->getId());
         }
         return $this->twig->render('Game/play.html.twig', [
             "collection" => $playerSterckets,
