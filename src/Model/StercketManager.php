@@ -88,11 +88,25 @@ class StercketManager extends AbstractManager
         return $collection;
     }
 
+    /**
+     * Get the row from database where the id is equals to the given id as a stercket object.
+     */
+    public function selectOneByIdAsObject(int $id, string $orderBy = '', string $direction = 'ASC'): Stercket
+    {
+        $query = 'SELECT * FROM ' . static::TABLE . ' WHERE id = ' . $id;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+        $statement = $this->pdo->query($query);
+        $stercket = $statement->fetchObject('\App\Model\Stercket');
+
+        return $stercket;
+    }
     public function updateHP(): void
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "
             SET`health`=:health
- ");
+        ");
         $statement->bindValue('health', Stercket::MAX_HEALT, \PDO::PARAM_INT);
         $statement->execute();
     }
