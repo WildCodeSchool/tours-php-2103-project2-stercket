@@ -36,4 +36,16 @@ class GameController extends AbstractController
             "woodSterckets" => $woodSterckets
         ]);
     }
+
+
+
+
+     //heal stercket
+    public function rest()
+    {
+        $stercketManager = new StercketManager();
+        $stercketManager->updateHP();
+
+        header("Location: /Game/play");
+    }
 }

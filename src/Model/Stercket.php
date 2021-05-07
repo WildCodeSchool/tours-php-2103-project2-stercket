@@ -14,6 +14,7 @@ class Stercket
     ];
     public const TYPES = ['mage', 'knight', 'archer', 'lancer', 'horseman'];
     public const OWNERS = ['wood', 'player'];
+    public const MAX_HEALT = 20;
     private int $id;
     private string $name;
     private string $specie;
