@@ -19,7 +19,6 @@ class GameController extends AbstractController
     public function play(string $action = "")
     {
         $stercketManager = new StercketManager();
-        $collection = $stercketManager->selectAllAsObject();
         if ($action === "battle" && isset($_POST["userStercket"]) && isset($_POST["woodStercket"])) {
             $userStercket = $stercketManager->selectOneByIdAsObject($_POST["userStercket"]);
             $woodStercket = $stercketManager->selectOneByIdAsObject($_POST["woodStercket"]);
@@ -31,6 +30,7 @@ class GameController extends AbstractController
             $this->twig->addGlobal("stercketEnnemy", $woodStercket);
             $this->twig->addGlobal("logs", $logs);
         }
+        $collection = $stercketManager->selectAllAsObject();
         $playerSterckets = [];
         $woodSterckets = [];
         foreach ($collection as $stercket) {
@@ -39,6 +39,15 @@ class GameController extends AbstractController
             } else {
                 $woodSterckets[] = $stercket;
             }
+        }
+        for (
+            $nbWoodStercket = count($woodSterckets);
+            $nbWoodStercket < Stercket::MAX_WOOD_SIZE;
+            $nbWoodStercket++
+        ) {
+            $woodStercket = new Stercket();
+            $woodStercket->initialise('wood');
+            $stercketManager->insert($woodStercket);
         }
         return $this->twig->render('Game/play.html.twig', [
             "collection" => $playerSterckets,
