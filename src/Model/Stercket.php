@@ -162,8 +162,7 @@ class Stercket
     public function capture(Stercket $stercketEnnemy)
     {
         if ($stercketEnnemy->getHealth() === 0) {
-            $stercketEnnemy->setOwner(self::OWNERS[1])
+            $stercketEnnemy->setOwner(self::OWNERS[1]);
         }
     }
-
 }
