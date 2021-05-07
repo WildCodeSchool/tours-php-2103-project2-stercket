@@ -8,8 +8,10 @@
             <link rel="stylesheet" href="/assets/css/play.css">
     {% endblock %}
     {% block content %}
-        {{ include ('Game/battle.html.twig') }}
-        <form action="/Game/play/" method="POST" id="battleForm">
+        {% if action == "battle" %}
+            {{ include ('Game/battle.html.twig') }}
+        {% endif %}
+        <form action="/Game/play/battle" method="POST" id="battleForm">
             <div class="container">
                 <nav class="navbar">
                     <div class="hamburger-menu">
@@ -22,7 +24,7 @@
                             <a href='/Home/index' class="button homeButton"> Home </a>
                         </li>
                         <li class="nav-item">
-                            <button class = "button buttonRest"> Rest </button>
+                            <a href="/Game/rest" class = "button buttonRest"> Rest </a> 
                         </li>
                         <li class="nav-item">
                             <input type="submit" form="battleForm" class = "button button-Battle" value="Battle">

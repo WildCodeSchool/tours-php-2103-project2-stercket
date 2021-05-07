@@ -16,7 +16,7 @@ class GameController extends AbstractController
      * @throws \Twig\Error\SyntaxError
      */
 
-    public function play()
+    public function play(string $action = "")
     {
         $stercketManager = new StercketManager();
         $collection = $stercketManager->selectAllAsObject();
@@ -30,22 +30,32 @@ class GameController extends AbstractController
                 $woodSterckets[] = $stercket;
             }
         }
-
-        //just to begin with, changes will come
-        $stercketUser = null;
-        $stercketEnnemy = null;
-        foreach ($collection as $stercket) {
-            if ($stercket->getOwner() === 'player') {
-                $stercketUser = $stercket;
-            } elseif ($stercket->getOwner() === 'wood') {
-                $stercketEnnemy = $stercket;
-            }
+        if ($action === "battle" && isset($_POST["userStercket"]) && isset($_POST["woodStercket"])) {
+            $userStercket = $stercketManager->selectOneByIdAsObject($_POST["userStercket"]);
+            $woodStercket = $stercketManager->selectOneByIdAsObject($_POST["woodStercket"]);
+            return $this->twig->render('Game/play.html.twig', [
+                "action" => "battle",
+                "stercketUser" => $userStercket,
+                "stercketEnnemy" => $woodStercket,
+                "collection" => $playerSterckets,
+                "woodSterckets" => $woodSterckets
+            ]);
         }
         return $this->twig->render('Game/play.html.twig', [
-            "stercketUser" => $stercketUser,
-            "stercketEnnemy" => $stercketEnnemy,
             "collection" => $playerSterckets,
             "woodSterckets" => $woodSterckets
         ]);
+    }
+
+
+
+
+     //heal stercket
+    public function rest()
+    {
+        $stercketManager = new StercketManager();
+        $stercketManager->updateHP();
+
+        header("Location: /Game/play");
     }
 }
