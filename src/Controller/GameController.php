@@ -20,6 +20,7 @@ class GameController extends AbstractController
     {
         $stercketManager = new StercketManager();
         $collection = $stercketManager->selectAllAsObject();
+
         $playerSterckets = [];
         $woodSterckets = [];
         foreach ($collection as $stercket) {

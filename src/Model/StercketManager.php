@@ -88,6 +88,12 @@ class StercketManager extends AbstractManager
         return $collection;
     }
 
+    public function deleteAllSterckets(): void
+    {
+        $query = 'TRUNCATE TABLE ' . static::TABLE;
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+    }
     /**
      * Get the row from database where the id is equals to the given id as a stercket object.
      */
