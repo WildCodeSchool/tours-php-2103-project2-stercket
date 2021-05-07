@@ -16,7 +16,7 @@ class GameController extends AbstractController
      * @throws \Twig\Error\SyntaxError
      */
 
-    public function play()
+    public function play(string $action = "")
     {
         $stercketManager = new StercketManager();
         $collection = $stercketManager->selectAllAsObject();
@@ -29,9 +29,16 @@ class GameController extends AbstractController
                 $woodSterckets[] = $stercket;
             }
         }
+        if ($action === "battle" && isset($_POST["userStercket"]) && isset($_POST["woodStercket"])) {
+            return $this->twig->render('Game/play.html.twig', [
+                "action" => "battle",
+                "stercketUser" => $collection[$_POST["userStercket"] - 1],
+                "stercketEnnemy" => $collection[$_POST["woodStercket"] - 1],
+                "collection" => $playerSterckets,
+                "woodSterckets" => $woodSterckets
+            ]);
+        }
         return $this->twig->render('Game/play.html.twig', [
-            "stercketUser" => $playerSterckets[0],
-            "stercketEnnemy" => $woodSterckets[0],
             "collection" => $playerSterckets,
             "woodSterckets" => $woodSterckets
         ]);

@@ -8,8 +8,10 @@
             <link rel="stylesheet" href="/assets/css/play.css">
     {% endblock %}
     {% block content %}
-        {{ include ('Game/battle.html.twig') }}
-        <form action="/Game/play/" method="POST" id="battleForm">
+        {% if action == "battle" %}
+            {{ include ('Game/battle.html.twig') }}
+        {% endif %}
+        <form action="/Game/play/battle" method="POST" id="battleForm">
             <div class="container">
                 <nav class="navbar">
                     <div class="hamburger-menu">
