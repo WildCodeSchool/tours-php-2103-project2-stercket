@@ -18,13 +18,22 @@ class GameController extends AbstractController
 
     public function play()
     {
-        $stercketUser = new Stercket();
-        $stercketEnnemy = new Stercket();
-        $stercketUser->initialise('player');
-        $stercketEnnemy->initialise('wood');
+        $stercketManager = new StercketManager();
+        $collection = $stercketManager->selectAllAsObject();
+        $playerSterckets = [];
+        $woodSterckets = [];
+        foreach ($collection as $stercket) {
+            if ($stercket->getOwner() == "player") {
+                $playerSterckets[] = $stercket;
+            } else {
+                $woodSterckets[] = $stercket;
+            }
+        }
         return $this->twig->render('Game/play.html.twig', [
-            "stercketUser" => $stercketUser,
-            "stercketEnnemy" => $stercketEnnemy,
+            "stercketUser" => $playerSterckets[0],
+            "stercketEnnemy" => $woodSterckets[0],
+            "collection" => $playerSterckets,
+            "woodSterckets" => $woodSterckets
         ]);
     }
 
